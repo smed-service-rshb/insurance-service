@@ -120,6 +120,9 @@ public class FindProgramSettingResult   {
     @JsonProperty("individualRate")
     private Boolean individualRate = null;
 
+    @JsonProperty("discount")
+    private BigDecimal discount = null;
+
 
     /**
      * Создает пустой экземпляр класса
@@ -157,8 +160,9 @@ public class FindProgramSettingResult   {
      * @param specialRate Признак специального курса валюты для программы
      * @param specialRateValue Добавочный процент специального курса валют
      * @param individualRate Признак возможности использования индивидуального курса валют
+     * @param discount Процент скидки
      */
-    public FindProgramSettingResult(Long programId, String programName, ProgramKind programKind, String programNumber, Long programSettingId, PremiumMethod premiumMethod, BigDecimal coefficient, BigDecimal premium, BigDecimal sum, Integer minimumTerm, Integer maximumTerm, CalendarUnit calendarUnit, Long currency, PaymentPeriodicity periodicity, String policyCode, String option, Integer coolingPeriod, List<FindProgramRisk> risks, List<FindProgramRisk> optionalRisks, List<RequiredField> requiredFields, List<RiskDocument> documents, List<ContractTemplate> contractTemplate, List<StrategyData> strategies, BigDecimal guaranteeLevel, Integer paymentTerm, Boolean policyholderInsured, Boolean specialRate, BigDecimal specialRateValue, Boolean individualRate) {
+    public FindProgramSettingResult(Long programId, String programName, ProgramKind programKind, String programNumber, Long programSettingId, PremiumMethod premiumMethod, BigDecimal coefficient, BigDecimal premium, BigDecimal sum, Integer minimumTerm, Integer maximumTerm, CalendarUnit calendarUnit, Long currency, PaymentPeriodicity periodicity, String policyCode, String option, Integer coolingPeriod, List<FindProgramRisk> risks, List<FindProgramRisk> optionalRisks, List<RequiredField> requiredFields, List<RiskDocument> documents, List<ContractTemplate> contractTemplate, List<StrategyData> strategies, BigDecimal guaranteeLevel, Integer paymentTerm, Boolean policyholderInsured, Boolean specialRate, BigDecimal specialRateValue, Boolean individualRate, BigDecimal discount) {
         this.programId = programId;
         this.programName = programName;
         this.programKind = programKind;
@@ -188,6 +192,7 @@ public class FindProgramSettingResult   {
         this.specialRate = specialRate;
         this.specialRateValue = specialRateValue;
         this.individualRate = individualRate;
+        this.discount = discount;
     }
 
     /**
@@ -746,6 +751,24 @@ public class FindProgramSettingResult   {
     }
 
 
+    /**
+     * Процент скидки
+    * @return Процент скидки
+    **/
+    @ApiModelProperty(value = "Процент скидки")
+    
+  @Valid
+
+
+    public BigDecimal getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(BigDecimal discount) {
+        this.discount = discount;
+    }
+
+
   @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -783,12 +806,13 @@ public class FindProgramSettingResult   {
             Objects.equals(this.policyholderInsured, findProgramSettingResult.policyholderInsured) &&
             Objects.equals(this.specialRate, findProgramSettingResult.specialRate) &&
             Objects.equals(this.specialRateValue, findProgramSettingResult.specialRateValue) &&
-            Objects.equals(this.individualRate, findProgramSettingResult.individualRate);
+            Objects.equals(this.individualRate, findProgramSettingResult.individualRate) &&
+            Objects.equals(this.discount, findProgramSettingResult.discount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(programId, programName, programKind, programNumber, programSettingId, premiumMethod, coefficient, premium, sum, minimumTerm, maximumTerm, calendarUnit, currency, periodicity, policyCode, option, coolingPeriod, risks, optionalRisks, requiredFields, documents, contractTemplate, strategies, guaranteeLevel, paymentTerm, policyholderInsured, specialRate, specialRateValue, individualRate);
+        return Objects.hash(programId, programName, programKind, programNumber, programSettingId, premiumMethod, coefficient, premium, sum, minimumTerm, maximumTerm, calendarUnit, currency, periodicity, policyCode, option, coolingPeriod, risks, optionalRisks, requiredFields, documents, contractTemplate, strategies, guaranteeLevel, paymentTerm, policyholderInsured, specialRate, specialRateValue, individualRate, discount);
     }
 
     @Override
@@ -825,6 +849,7 @@ public class FindProgramSettingResult   {
         sb.append("    specialRate: ").append(toIndentedString(specialRate)).append("\n");
         sb.append("    specialRateValue: ").append(toIndentedString(specialRateValue)).append("\n");
         sb.append("    individualRate: ").append(toIndentedString(individualRate)).append("\n");
+        sb.append("    discount: ").append(toIndentedString(discount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -271,6 +271,7 @@ public class ProgramSettingControllerTest {
         programSettingData.setMaxWeight(100);
         programSettingData.setPeriodicity(PaymentPeriodicity.MONTHLY);
         programSettingData.setPolicyholderInsured(true);
+        programSettingData.setDiscount(BigDecimal.TEN);
 
         mockMvc.perform(post(CREATE_PROGRAMSETTING_REQUEST)
                 .header(PermissionControlConfig.HTTP_HEAD, serializer.serialize(PRODUCT_ADMIN_PRINCIPAL_DATA))
@@ -369,6 +370,7 @@ public class ProgramSettingControllerTest {
         programSettingData.setMaxWeight(100);
         programSettingData.setPeriodicity(PaymentPeriodicity.MONTHLY);
         programSettingData.setPolicyholderInsured(true);
+        programSettingData.setDiscount(BigDecimal.TEN);
 
         mockMvc.perform(put(String.format(UPDATE_PROGRAMSETTING_REQUEST, "1"))
                 .header(PermissionControlConfig.HTTP_HEAD, serializer.serialize(PRODUCT_ADMIN_PRINCIPAL_DATA))
@@ -383,7 +385,8 @@ public class ProgramSettingControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.risks", hasSize(1)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.risks[0].sortPriority", is(4.00)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.risks[0].otherRiskParam", is("TEST")));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.risks[0].otherRiskParam", is("TEST")))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.discount", comparesEqualTo(10.00)));
     }
 
     /**

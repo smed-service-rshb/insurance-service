@@ -212,7 +212,8 @@ public class ProgramSettingConverter {
                 programSetting.getPolicyHolderInsured(),
                 programSetting.getSpecialRate(),
                 programSetting.getSpecialRateValue(),
-                programSetting.getIndividualRate()
+                programSetting.getIndividualRate(),
+                programSetting.getDiscount()
         );
     }
 
@@ -393,6 +394,7 @@ public class ProgramSettingConverter {
         backEntity.setMinLowerPressure(frontEntity.getMinLowerPressure());
         backEntity.setGuaranteeLevel(frontEntity.getGuaranteeLevel());
         backEntity.setPaymentTerm(frontEntity.getPaymentTerm());
+        backEntity.setDiscount(frontEntity.getDiscount());
         backEntity.setDeleted(false);
 
 

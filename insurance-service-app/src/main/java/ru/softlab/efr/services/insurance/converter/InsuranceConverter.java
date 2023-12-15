@@ -22,6 +22,7 @@ import ru.softlab.efr.services.insurance.model.rest.*;
 import ru.softlab.efr.services.insurance.repositories.InsuranceRepository;
 import ru.softlab.efr.services.insurance.repositories.InsuranceSummary;
 import ru.softlab.efr.services.insurance.services.*;
+import ru.softlab.efr.services.insurance.services.models.InsuranceCalculationInfo;
 import ru.softlab.efr.services.insurance.utils.StringUtils;
 
 import javax.persistence.EntityNotFoundException;
@@ -31,6 +32,8 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static org.apache.commons.lang3.BooleanUtils.isTrue;
 
 @Service
 @PropertySource(value = "classpath:messages.properties", encoding = "UTF-8")
@@ -251,12 +254,11 @@ public class InsuranceConverter {
         if (programSetting != null) {
             Integer coolingPeriod = programSetting.getProgram().getCoolingPeriod();
             Timestamp staticDate = programSetting.getStaticDate();
-            if(staticDate != null && programSetting.getStaticDate() != null){
-                if(programSetting.getStaticDate().compareTo(new Date()) >= 0){
+            if (staticDate != null && programSetting.getStaticDate() != null) {
+                if (programSetting.getStaticDate().compareTo(new Date()) >= 0) {
                     insurance.setConclusionDate(model.getConclusionDate());
                     insurance.setStartDate(staticDate.toLocalDateTime().toLocalDate());
-                }
-                else {
+                } else {
                     String msg = STATIC_DATE_LESS_CURRENT_DATE;
                     errorMessages.add(msg);
                 }
@@ -277,33 +279,20 @@ public class InsuranceConverter {
             insurance.setDuration(model.getDuration());
             insurance.setEndDate(calculateEndDate(insurance));
 
-            BigDecimal insuranceAmount;
-            BigDecimal premiumPerPeriod;
-            BigDecimal totalPremium;
+            InsuranceCalculationInfo insuranceCalculationInfo = buildInsuranceCalculationInfo(model, programSetting);
+            insuranceCalculationInfo = buildInsuranceCalculationDiscount(insurance, programSetting, insuranceCalculationInfo);
+
+            BigDecimal totalPremium = insuranceCalculationInfo.getTotalPremium();
             int periodCount = calculationService.periodCount(CalendarUnitEnum.valueOf(model.getCalendarUnit().name()),
                     model.getDuration(), programSetting.getPeriodicity());
 
-            if (FindProgramType.SUM.equals(model.getType())) {
-                insuranceAmount = model.getAmount();
-                totalPremium = calculationService.getInsurancePremiumByProgramSetting(programSetting, insuranceAmount);
-                premiumPerPeriod = calculationService.getInsurancePremiumPerPeriodByProgramSetting(
-                        programSetting, insuranceAmount, CalendarUnitEnum.valueOf(model.getCalendarUnit().name()), model.getDuration());
-            } else {
-                premiumPerPeriod = model.getPremium();
-                insuranceAmount = calculationService.getInsuranceAmountByProgramSetting(
-                        programSetting, premiumPerPeriod, CalendarUnitEnum.valueOf(model.getCalendarUnit().name()), model.getDuration());
-                totalPremium = premiumPerPeriod.multiply(BigDecimal.valueOf(periodCount));
-            }
             insurance.setCurrency(model.getCurrencyId());
             insurance.setDuration(model.getDuration());
-            insurance.setAmount(insuranceAmount);
-            insurance.setPremium(premiumPerPeriod);
-            buildDiscount(insurance, programSetting);
             if (!isRubCurrency && exchangeRate != null) {
-                insurance.setRurAmount(insuranceAmount.multiply(exchangeRate));
+                insurance.setRurAmount(insurance.getAmount().multiply(exchangeRate));
                 insurance.setRurPremium(insurance.getPremium().multiply(exchangeRate));
             } else {
-                insurance.setRurAmount(insuranceAmount);
+                insurance.setRurAmount(insurance.getAmount());
                 insurance.setRurPremium(insurance.getPremium());
             }
             final BigDecimal rate = exchangeRate;
@@ -317,7 +306,7 @@ public class InsuranceConverter {
                             .findFirst()
                             .orElse(null);
                     if (existingEntityRisk != null) {
-                        existingEntityRisk.setAmount(calculationService.getInsuranceAmountByRiskSetting(riskSetting, insuranceAmount, totalPremium, periodCount));
+                        existingEntityRisk.setAmount(calculationService.getInsuranceAmountByRiskSetting(riskSetting, insurance.getAmount(), totalPremium, periodCount));
                         existingEntityRisk.setPremium(calculationService.getInsurancePremiumByRiskSetting(riskSetting));
                         existingEntityRisk.setOtherRiskParam(riskSetting.getOtherRiskParam());
                         setRurAmountToRisk(isRubCurrency, rate, existingEntityRisk);
@@ -326,7 +315,7 @@ public class InsuranceConverter {
                         InsuranceRiskEntity riskEntity = new InsuranceRiskEntity();
                         riskEntity.setInsurance(insurance);
                         riskEntity.setRisk(riskSetting.getRisk());
-                        riskEntity.setAmount(calculationService.getInsuranceAmountByRiskSetting(riskSetting, insuranceAmount, totalPremium, periodCount));
+                        riskEntity.setAmount(calculationService.getInsuranceAmountByRiskSetting(riskSetting, insurance.getAmount(), totalPremium, periodCount));
                         riskEntity.setPremium(calculationService.getInsurancePremiumByRiskSetting(riskSetting));
                         setRurAmountToRisk(isRubCurrency, rate, riskEntity);
                         riskEntity.setOtherRiskParam(riskSetting.getOtherRiskParam());
@@ -347,14 +336,14 @@ public class InsuranceConverter {
                             .findFirst()
                             .orElse(null);
                     if (existingEntityRisk != null) {
-                        existingEntityRisk.setAmount(calculationService.getInsuranceAmountByRiskSetting(riskSetting, insuranceAmount, totalPremium, periodCount));
+                        existingEntityRisk.setAmount(calculationService.getInsuranceAmountByRiskSetting(riskSetting, insurance.getAmount(), totalPremium, periodCount));
                         existingEntityRisk.setPremium(calculationService.getInsurancePremiumByRiskSetting(riskSetting));
                         return existingEntityRisk;
                     } else {
                         InsuranceAddRiskEntity riskEntity = new InsuranceAddRiskEntity();
                         riskEntity.setInsurance(insurance);
                         riskEntity.setRisk(riskSetting.getRisk());
-                        riskEntity.setAmount(calculationService.getInsuranceAmountByRiskSetting(riskSetting, insuranceAmount, totalPremium, periodCount));
+                        riskEntity.setAmount(calculationService.getInsuranceAmountByRiskSetting(riskSetting, insurance.getAmount(), totalPremium, periodCount));
                         riskEntity.setPremium(calculationService.getInsurancePremiumByRiskSetting(riskSetting));
                         return riskEntity;
                     }
@@ -381,18 +370,39 @@ public class InsuranceConverter {
         }
     }
 
-    private void buildDiscount(Insurance insurance, ProgramSetting programSetting) {
+    private InsuranceCalculationInfo buildInsuranceCalculationInfo(BaseInsuranceModel model, ProgramSetting programSetting) {
+        BigDecimal insuranceAmount;
+        BigDecimal premiumPerPeriod;
+        BigDecimal totalPremium;
+        int periodCount = calculationService.periodCount(CalendarUnitEnum.valueOf(model.getCalendarUnit().name()),
+                model.getDuration(), programSetting.getPeriodicity());
+
+        if (FindProgramType.SUM.equals(model.getType())) {
+            insuranceAmount = model.getAmount();
+            totalPremium = calculationService.getInsurancePremiumByProgramSetting(programSetting, insuranceAmount);
+            premiumPerPeriod = calculationService.getInsurancePremiumPerPeriodByProgramSetting(
+                    programSetting, insuranceAmount, CalendarUnitEnum.valueOf(model.getCalendarUnit().name()), model.getDuration());
+        } else {
+            premiumPerPeriod = model.getPremium();
+            insuranceAmount = calculationService.getInsuranceAmountByProgramSetting(
+                    programSetting, premiumPerPeriod, CalendarUnitEnum.valueOf(model.getCalendarUnit().name()), model.getDuration());
+            totalPremium = premiumPerPeriod.multiply(BigDecimal.valueOf(periodCount));
+        }
+
+        return new InsuranceCalculationInfo(insuranceAmount, premiumPerPeriod, totalPremium);
+    }
+
+    private InsuranceCalculationInfo buildInsuranceCalculationDiscount(Insurance insurance, ProgramSetting programSetting, InsuranceCalculationInfo insuranceCalculationInfo) {
         insurance.setPremiumWithoutDiscount(null);
         insurance.setDiscount(null);
 
+        boolean calcBySum = isTrue(insurance.getCalcBySum());
         BigDecimal discount = programSetting.getDiscount();
-        BigDecimal premiumWithoutDiscount = insurance.getPremium();
 
         if (discount == null
                 || discount.compareTo(BigDecimal.ZERO) == 0
-                || premiumWithoutDiscount == null
                 || insurance.getHolder() == null) {
-            return;
+            return insuranceCalculationInfo;
         }
 
         boolean existsContract = insuranceRepository.existsByClient(
@@ -400,15 +410,44 @@ public class InsuranceConverter {
                 InsuranceStatusCode.PAYED);
 
         if (!existsContract) {
-            return;
+            return insuranceCalculationInfo;
         }
 
-        insurance.setPremium(premiumWithoutDiscount
-                .subtract(premiumWithoutDiscount
-                        .multiply(discount)
-                        .divide(PERCENTAGE, SCALE_2, RoundingMode.DOWN)));
-        insurance.setPremiumWithoutDiscount(premiumWithoutDiscount);
         insurance.setDiscount(discount);
+        if (calcBySum) {
+            BigDecimal insuranceAmount = insuranceCalculationInfo.getInsuranceAmount() != null
+                    ? calcAmountWithDiscount(insuranceCalculationInfo.getInsuranceAmount(), discount)
+                    : insuranceCalculationInfo.getInsuranceAmount();
+
+            insurance.setAmount(insuranceAmount);
+            insurance.setPremium(insuranceCalculationInfo.getPremiumPerPeriod());
+            insurance.setPremiumWithoutDiscount(insuranceCalculationInfo.getInsuranceAmount());
+            return new InsuranceCalculationInfo(
+                    insuranceAmount,
+                    insuranceCalculationInfo.getPremiumPerPeriod(),
+                    insuranceCalculationInfo.getTotalPremium());
+        } else {
+            BigDecimal premiumPerPeriod = insuranceCalculationInfo.getPremiumPerPeriod() != null
+                    ? calcAmountWithDiscount(insuranceCalculationInfo.getPremiumPerPeriod(), discount)
+                    : insuranceCalculationInfo.getPremiumPerPeriod();
+            BigDecimal totalPremium = insuranceCalculationInfo.getTotalPremium() != null
+                    ? calcAmountWithDiscount(insuranceCalculationInfo.getTotalPremium(), discount)
+                    : insuranceCalculationInfo.getTotalPremium();
+
+            insurance.setAmount(insuranceCalculationInfo.getInsuranceAmount());
+            insurance.setPremium(premiumPerPeriod);
+            insurance.setPremiumWithoutDiscount(insuranceCalculationInfo.getPremiumPerPeriod());
+            return new InsuranceCalculationInfo(
+                    insuranceCalculationInfo.getInsuranceAmount(),
+                    premiumPerPeriod,
+                    totalPremium);
+        }
+    }
+
+    private static BigDecimal calcAmountWithDiscount(BigDecimal value, BigDecimal discount) {
+        return value.subtract(value
+                .multiply(discount)
+                .divide(PERCENTAGE, SCALE_2, RoundingMode.DOWN));
     }
 
     private void setRurAmountToRisk(boolean isRubCurrency, BigDecimal rate, InsuranceRiskEntity riskEntity) {
@@ -422,15 +461,6 @@ public class InsuranceConverter {
         } else {
             riskEntity.setRurPremium(riskEntity.getPremium());
             riskEntity.setRurAmount(riskEntity.getAmount());
-        }
-    }
-
-    private boolean clientIsNotExists(Long clientId, String who) {
-        if (!clientService.isExists(clientId)) {
-            LOGGER.warn(String.format(CLIENT_NOT_EXIST_WARN, who, clientId));
-            return true;
-        } else {
-            return false;
         }
     }
 
@@ -714,7 +744,7 @@ public class InsuranceConverter {
         //вид программы страхования
         viewModel.setKind(ProgramKind.valueOf(insurance.getProgramSetting().getProgram().getType().name()));
         //вариант программы страхования
-        if(Objects.nonNull(insurance.getProgramSetting().getProgram().getVariant())) {
+        if (Objects.nonNull(insurance.getProgramSetting().getProgram().getVariant())) {
             viewModel.setOption(insurance.getProgramSetting().getProgram().getVariant());
         }
         //Номер договора
@@ -793,14 +823,15 @@ public class InsuranceConverter {
 
     private LocalDate calculateEndDate(Integer paymentTerm, Integer duration, LocalDate startDate, LocalDate createDate,
                                        CalendarUnitEnum calendarUnit) {
-        if(Objects.isNull(startDate)) {
+        if (Objects.isNull(startDate)) {
             startDate = createDate;
         }
         if (paymentTerm != null) {
             startDate = startDate.plusYears(paymentTerm);
         }
         startDate = startDate.plusDays(-1);
-        if (duration == null) return startDate;
+        if (duration == null)
+            return startDate;
         switch (calendarUnit) {
             case DAY:
                 return startDate.plusDays(duration);
@@ -874,9 +905,9 @@ public class InsuranceConverter {
         return currency;
     }
 
-    public RedemptionSum convert(ReportableRedemption redemptions){
+    public RedemptionSum convert(ReportableRedemption redemptions) {
         RedemptionSum redemptionSum = new RedemptionSum();
         BeanUtils.copyProperties(redemptions, redemptionSum);
-       return redemptionSum;
+        return redemptionSum;
     }
 }

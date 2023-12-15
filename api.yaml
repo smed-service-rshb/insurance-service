@@ -5313,6 +5313,9 @@ definitions:
       individualRate:
         type: boolean
         description: Признак возможности использования индивидуального курса валют
+      discount:
+        type: number
+        description: Процент скидки
 
 
   availProgramKindListRs:
