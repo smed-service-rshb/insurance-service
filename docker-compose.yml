@@ -1,0 +1,89 @@
+# Набор сервисов, требующийся для работы ФОС (ActiveMQ, API Gateway, auth-service, common-dict, insurance-service).
+#
+# Настройки с инфраструктурой системного журнала (ElasticSearch, Kibana и микросервис "Системный журнал"),
+# вынесены в отдельный файл docker-compose-systemjournal.yml, чтобы была возможность запускать эти сервисы опционально.
+version: '2'
+services:
+
+  # active-mq
+  efr-mq:
+    image: docker.dos.softlab.ru/rshb/efr/communication-systems/library/active-mq
+    ports:
+      - "8161:8161"
+      - "61616:61616"
+
+  # приложение api-gateway-app
+  api-gateway-app:
+    image: docker.dos.softlab.ru/smedservice/api-gateway/api-gateway-app:${PR_IMAGE_TAG}
+    ports:
+      - "8082:8080"
+      - "9992:9990"
+      - "8782:8787"
+    links:
+      - efr-mq
+
+  # приложение auth-service-db
+  auth-service-db:
+    image: docker.dos.softlab.ru/smedservice/auth-service/auth-service-db:${PR_IMAGE_TAG}
+    ports:
+      - "5433:5432"
+
+  # приложение auth-service-app
+  auth-service-app:
+    image: docker.dos.softlab.ru/smedservice/auth-service/auth-service-app:${PR_IMAGE_TAG}
+    ports:
+      - "8083:8080"
+      - "9993:9990"
+      - "8453:8453"
+    links:
+      - efr-mq
+      - auth-service-db:service-db
+
+  # приложение common-dict-db
+  common-dict-db:
+    image: docker.dos.softlab.ru/smedservice/common-dict/common-dict-db:${PR_IMAGE_TAG}
+    ports:
+      - "5442:5432"
+
+  # приложение common-dict-app
+  common-dict-app:
+    image: docker.dos.softlab.ru/smedservice/common-dict/common-dict-app:${PR_IMAGE_TAG}
+    ports:
+      - "8092:7001"
+      - "8452:8453"
+    links:
+      - efr-mq
+      - common-dict-db:service-db
+
+  # приложение insurance-service-db
+  insurance-service-db:
+    build:
+      context: ./insurance-service-app
+      dockerfile: Dockerfile-db
+    image: docker.dos.softlab.ru/smedservice/insurance-service/insurance-service-db:${BUILD_IMAGE_TAG}
+    ports:
+      - "5435:5432"
+
+  # приложение insurance-service-app
+  insurance-service-app:
+    build:
+      context: ./insurance-service-app
+      dockerfile: Dockerfile-app
+    image: docker.dos.softlab.ru/smedservice/insurance-service/insurance-service-app:${BUILD_IMAGE_TAG}
+    ports:
+      - "8085:8080"
+      - "9995:9990"
+      - "8785:8787"
+    links:
+      - efr-mq
+      - insurance-service-db:service-db
+
+  # презентационная часть микросервиса "РСХБ-Страхование"
+  web-presentation-app:
+    image: docker.dos.softlab.ru/smedservice/web-presentation-app/web-presentation-app:${PR_IMAGE_TAG}
+    env_file:
+      - .env
+    ports:
+      - "8888:80"
+    links:
+      - api-gateway-app

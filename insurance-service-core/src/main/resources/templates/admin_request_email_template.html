@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>"Обращение из Личного кабинета"</title>
+</head>
+<body>
+<div>
+    <ul>
+        <li th:text="'Номер обращения: ' + ${requestId}"></li>
+    </ul>
+</div>
+<div>
+    <li th:text="' Персональные данные клиента:' "></li>
+    <ul>
+        <li th:text="' Фамилия: ' + ${personal.surName}"></li>
+        <li th:text="' Имя: ' + ${personal.name}"></li>
+        <li th:text="' Отчество: ' + ${personal.thirdName}"></li>
+        <li th:text="' Дата рождения: ' + ${personal.birthDate}"></li>
+    </ul>
+    <li th:text="' Данные обращения:' "></li>
+    <ul>
+        <li th:text="' Тема обращения: ' + ${request.requestTopic}"></li>
+        <li th:text="' Дата обращения: ' + ${request.requestDate}"></li>
+        <li th:text="' Номер договора: ' + ${request.insuranceNumber}"></li>
+        <li th:text="' Контактный номер телефона: ' + ${request.phone}"></li>
+        <li th:text="' E-mail: ' + ${request.email}"></li>
+        <li th:text="' Текст обращения: ' + ${request.text}"></li>
+    </ul>
+</div>
+</body>
+</html>

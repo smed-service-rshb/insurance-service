@@ -1,0 +1,54 @@
+# Настройки с инфраструктурой системного журнала (ElasticSearch, Kibana и микросервис "Системный журнал"),
+# вынесены в отдельный файл, чтобы была возможность запускать эти сервисы опционально.
+version: '2'
+services:
+
+  # elasticsearch
+  #
+  # Для корректного запуска требуется выполнить следующие настройки в виртуальной машине
+  # (см. https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html):
+  # docker-machine ssh
+  # sudo sysctl -w vm.max_map_count=262144
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.3
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - cluster.name=elasticsearch-cluster
+      - xpack.security.enabled=false
+      - xpack.ml.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+  # kibana для просмотра содержимого elasticsearch
+  kibana:
+    image: docker.elastic.co/kibana/kibana:5.4.3
+    environment:
+      - server.name=kibana
+      - elasticsearch.url=http://elasticsearch:9200
+      - xpack.security.enabled=false
+      - xpack.ml.enabled=false
+    ports:
+      - "5601:5601"
+    links:
+      - elasticsearch
+
+  # Приложение системный журнал
+  system-journal-app:
+    image: docker.dos.softlab.ru/rshb/system-journal/system-journal-app:2.0.0
+    environment:
+      - spring.activemq.broker-url=tcp://efr-mq:61616
+      - systemjournal.jms-queue=LOG-TRANSPORT-QUEUE
+      - spring.data.elasticsearch.cluster-name=elasticsearch-cluster
+      - spring.data.elasticsearch.cluster-nodes=elasticsearch:9300
+      - "JAVA_OPTS=-server -Xms128m -Xmx256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dfile.encoding=UTF-8"
+    ports:
+      - "8789:8787"
+    links:
+      - elasticsearch
+      - efr-mq

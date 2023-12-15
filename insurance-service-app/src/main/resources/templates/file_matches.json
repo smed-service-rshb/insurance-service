@@ -1,0 +1,44 @@
+{
+  "smedservice": [
+    {
+      "programName": "Союз Мед Сервис",
+      "files": [
+        {
+          "filename": "SMS_certificate.jrxml",
+          "contractName": "Сертификат Медсоветник (архивный)",
+          "type": "SMS_certificate"
+        },
+        {
+          "filename": "SMS_certificate_v_10_09_2019.jrxml",
+          "contractName": "Сертификат Медсоветник v.10.09.2019",
+          "type": "SMS_certificate_v_10_09_2019"
+        },
+        {
+          "filename": "SMS_certificatePlus.jrxml",
+          "contractName": "Сертификат Медсоветник+ (архивный)",
+          "type": "SMS_certificatePlus"
+        },
+        {
+          "filename": "SMS_certificatePlus_v_10_09_2019.jrxml",
+          "contractName": "Сертификат Медсоветник+ v.10.09.2019",
+          "type": "SMS_certificatePlus_v_10_09_2019"
+        },
+        {
+          "filename": "SMS_payment_order.jrxml",
+          "contractName": "Платежное поручение",
+          "type": "SMS_payment_order"
+        }
+      ]
+    },
+    {
+      "programName": "Общие файлы",
+      "files": [
+        {
+          "filename": "word-card-for-client.jrxml",
+          "contractName": "Печатная форма карточки клиента",
+          "type": "word-card-for-client"
+        }
+      ]
+    }
+  ]
+}

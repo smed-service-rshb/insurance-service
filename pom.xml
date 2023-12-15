@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>ru.softlab.efr.common</groupId>
+        <artifactId>efr-parent-pom</artifactId>
+        <version>2.2</version>
+    </parent>
+
+    <groupId>ru.softlab.efr.services</groupId>
+    <artifactId>smedservice-insurance-service</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.2-SNAPSHOT</version>
+    <name>smedservice-insurance-service</name>
+
+    <properties>
+        <efr.authentication.version>1.0.5</efr.authentication.version>
+        <efr.common.dict.version>1.0.4</efr.common.dict.version>
+        <efr.utilities.version>3.3.0</efr.utilities.version>
+        <ibrs.reporting.version>1.2.0</ibrs.reporting.version>
+        <bpm-support.version>6.3.0</bpm-support.version>
+        <efr.settings.version>9.1.0</efr.settings.version>
+        <efr.transport.version>4.1.0</efr.transport.version>
+        <efr.logging.version>3.2.0</efr.logging.version>
+        <swagger.backend.generator>1.1.0</swagger.backend.generator>
+        <swagger.codegen.version>2.3.1</swagger.codegen.version>
+        <efr.swagger.codegen.version>2.3.16</efr.swagger.codegen.version>
+        <swagger.annotations.version>1.5.16</swagger.annotations.version>
+        <h2.version>1.4.193</h2.version>
+        <db-util.version>1.0.3</db-util.version>
+        <rshb.insurance.clients.data.service.client.version>1.0.3</rshb.insurance.clients.data.service.client.version>
+        <sonar.version>3.5.0.1254</sonar.version>
+        <sonar.exclusions>**/ru/softlab/efr/services/insurance/model/rest/**, **/ru/softlab/efr/services/insurance/model/client/**, **/*Api.java, **/ru/softlab/efr/services/insurance/*Client.java</sonar.exclusions>
+        <sonar.jacoco.reportPaths>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPaths>
+    </properties>
+
+    <scm>
+        <url>http://git.dos.softlab.ru/SMEDSERVICE/insurance-service</url>
+        <developerConnection>scm:git:git@git.dos.softlab.ru:SMEDSERVICE/insurance-service.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>coral-ibrs</id>
+            <name>coral-ibrs</name>
+            <url>http://coral:18088/repository/ibrs-private</url>
+        </repository>
+        <repository>
+            <id>coral</id>
+            <name>coral</name>
+            <url>http://coral:18088/repository/efr</url>
+        </repository>
+        <repository>
+            <id>coral-efr-insurance</id>
+            <name>coral-efr-insurance</name>
+            <url>http://coral:18088/repository/efr-insurance</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>efr-plugin-repo</id>
+            <url>http://coral:18088/repository/efr-common</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>jacoco-init</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                        <configuration>
+                            <append>true</append>
+                            <destFile>${sonar.jacoco.reportPaths}</destFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>coral</id>
+            <name>coral</name>
+            <url>http://coral:18088/repository/efr-common</url>
+        </repository>
+    </distributionManagement>
+    <modules>
+        <module>insurance-service-model</module>
+        <module>insurance-service-client</module>
+        <module>insurance-service-core</module>
+        <module>insurance-service-app</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-envers</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

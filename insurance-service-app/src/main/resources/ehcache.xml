@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+    <cacheManagerEventListenerFactory class="" properties=""/>
+
+    <cacheManagerPeerProviderFactory
+            class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+            properties="peerDiscovery=automatic,
+                  multicastGroupAddress=230.123.32.1,
+                  multicastGroupPort=49494, timeToLive=1"
+            propertySeparator=","
+    />
+
+    <cacheManagerPeerListenerFactory
+            class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
+            properties="socketTimeoutMillis=30000"
+            propertySeparator=","
+    />
+
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="3600"
+            timeToLiveSeconds="3600"
+            memoryStoreEvictionPolicy="LRU">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </defaultCache>
+
+    <cache
+            name="org.hibernate.cache.internal.StandardQueryCache"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600"
+    />
+
+    <cache
+            name="org.hibernate.cache.spi.UpdateTimestampsCache"
+            maxEntriesLocalHeap="5000"
+            eternal="true"
+    />
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.Contract"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.CoolingPeriod"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.Formula"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.RiskSetting"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.Risk"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.Segment"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.ProgramSetting"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.RequiredDocument"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.RequiredDocumentSetting"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.FastStartProgram"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.Program"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.RequiredField"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.Strategy"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.Insurance"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.RelatedOffice"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.Attachment"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.RedemptionEntity"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.RedemptionCoefficientEntity"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.StrategyProperty"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.RelatedEmployeeGroup"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.ShareEntity"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.Quote"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="ru.softlab.efr.services.insurance.model.db.BaseIndex"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <!-- TODO: добавлено на скорую руку; надо подумать над временем, указанным в timeToIdleSeconds, и необходимости репликации между нодами -->
+    <cache
+            name="employees"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <!-- TODO: добавлено на скорую руку; надо подумать над временем, указанным в timeToIdleSeconds, и необходимости репликации между нодами -->
+    <cache
+            name="currencies"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <!-- TODO: добавлено на скорую руку; надо подумать над временем, указанным в timeToIdleSeconds, и необходимости репликации между нодами -->
+    <cache
+            name="orgunits"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+    <cache
+            name="currentStates"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="3600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                  replicatePuts=false,
+                  replicateUpdates=true,
+                  replicateRemovals=true,
+                  replicatePutsViaCopy=false,
+                  replicatePutsViaCopy=false,
+                  replicateUpdatesViaCopy=false,
+                  asynchronousReplicationIntervalMillis=200"
+                                   propertySeparator=","
+        />
+    </cache>
+
+</ehcache>

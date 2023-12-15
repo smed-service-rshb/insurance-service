@@ -1,0 +1,146 @@
+swagger: '2.0'
+info:
+  title: API микросервиса управления договорами страхования
+  version: 1.0.0
+paths:
+
+  /insurance-service/v2/private/clients/search:
+    get:
+      tags:
+      - PrivateClientsData
+      description: Список клиентов
+      operationId: clientsSearchWithOutPermissions
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: surName
+        type: string
+        description: Фамилия клиента
+        required: false
+      - in: query
+        name: firstName
+        type: string
+        description: Имя клиента
+        required: false
+      - in: query
+        name: middleName
+        type: string
+        description: Отчество клиента
+        required: false
+      - in: query
+        name: birthDate
+        type: string
+        format: date
+        description: Дата рождения
+        required: false
+      - in: query
+        name: phoneNumber
+        type: string
+        description: Номер телефона
+        required: false
+      responses:
+        200:
+          description: ОК
+          schema:
+            $ref: '#/definitions/listClientsResponse'
+            description: Результаты поиска
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/errorModel'
+        403:
+          description: Forbidden
+        406:
+          description: Not Acceptable
+        500:
+          description: Internal server error
+
+definitions:
+
+  errorModel:
+    type: object
+    description: Описание ошибки
+    required:
+    - errors
+    properties:
+      errors:
+        type: array
+        items:
+          type: string
+
+  listClientsResponse:
+    type: object
+    description: Информация по найденным клиентам
+    properties:
+      clients:
+        type: array
+        items:
+          $ref: '#/definitions/foundClient'
+        description: Список найденных клиентов
+      totalFounds:
+        type: integer
+        description: Количество найденных клиентов
+
+  foundClient:
+    type: object
+    description: Данные клиента
+    properties:
+      id:
+        type: string
+        description: Id клиента
+      surName:
+        type: string
+        description: Фамилия
+      firstName:
+        type: string
+        description: Имя
+      middleName:
+        type: string
+        description: Отчество
+      birthDate:
+        type: string
+        format: date
+        description: Дата рождения
+      docType:
+        type: string
+        description: Тип документа
+      docSeries:
+        type: string
+        description: Серия документа
+      docNumber:
+        type: string
+        description: Номер документа
+      issuedDate:
+        type: string
+        format: date
+        description: Дата выдачи документа
+      gender:
+        $ref: '#/definitions/gender'
+        description: Пол
+      regAddress:
+        type: string
+        description: Адрес регистрации
+      status:
+        type: string
+        description: Статус значимости клиента
+      phoneNumber:
+        type: string
+        description: Номер телефона
+      orgUnit:
+        type: integer
+        format: int64
+        description: Организационная структура id
+      email:
+        type: string
+        description: email - клиента
+
+  gender:
+    type: string
+    enum:
+    - MALE
+    - FEMALE
+    description: >
+      Пол застрахованного, возможные значения:
+        MALE - мужской
+        FEMALE - женский

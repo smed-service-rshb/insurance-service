@@ -1,0 +1,10 @@
+############################################################
+# Dockerfile to build clients-data-service-db container images
+# Based on docker.dos.softlab.ru/rshb/efr/communication-systems/library/postgres:9.6
+############################################################
+
+# Use base docker.dos.softlab.ru/rshb/efr/communication-systems/library/postgres:9.6 image as the base
+FROM docker.dos.softlab.ru/rshb/efr/communication-systems/library/postgres:9.6
+
+# Load init script
+ADD ./build/scripts/ ./build/test-data/ /docker-entrypoint-initdb.d/

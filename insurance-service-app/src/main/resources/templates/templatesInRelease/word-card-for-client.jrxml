@@ -1,0 +1,2247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RshbInsuranceChooseHealth" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="e28d5171-aacc-4070-9f21-d4f8f7ac48b1">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="FIO" class="java.lang.String"/>
+		<field name="birthDateAndBirthPlaceAndBirthCountry" class="java.lang.String"/>
+		<field name="address" class="java.lang.String"/>
+		<field name="taxResidence" class="java.lang.String"/>
+		<field name="riskName" class="java.lang.String"/>
+		<field name="share" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="RecipientSubreportDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="fullName" class="java.lang.String"/>
+	<parameter name="INN" class="java.lang.String"/>
+	<parameter name="snils" class="java.lang.String"/>
+	<parameter name="birthDate" class="java.lang.String"/>
+	<parameter name="birthCountry" class="java.lang.String"/>
+	<parameter name="birthRegion" class="java.lang.String"/>
+	<parameter name="birthArea" class="java.lang.String"/>
+	<parameter name="birthPlace" class="java.lang.String"/>
+	<parameter name="insuredIdDocName" class="java.lang.String"/>
+	<parameter name="insuredIdDocNumber" class="java.lang.String"/>
+	<parameter name="insuredIdDocSeries" class="java.lang.String"/>
+	<parameter name="insuredCitizenship" class="java.lang.String"/>
+	<parameter name="insuredIdDocIssuedBy" class="java.lang.String"/>
+	<parameter name="insuredIdDivisionCode" class="java.lang.String"/>
+	<parameter name="insuredIdDocIssuedDate" class="java.lang.String"/>
+	<parameter name="migrationCardSeries" class="java.lang.String"/>
+	<parameter name="migrationCardNumber" class="java.lang.String"/>
+	<parameter name="migrationCardStartDate" class="java.lang.String"/>
+	<parameter name="migrationCardEndDate" class="java.lang.String"/>
+	<parameter name="residencePermitCardName" class="java.lang.String"/>
+	<parameter name="residencePermitCardSeries" class="java.lang.String"/>
+	<parameter name="residencePermitCardNumber" class="java.lang.String"/>
+	<parameter name="residencePermitCardStartDate" class="java.lang.String"/>
+	<parameter name="residencePermitCardEndDate" class="java.lang.String"/>
+	<parameter name="registrationIndex" class="java.lang.String"/>
+	<parameter name="registrationCode" class="java.lang.String"/>
+	<parameter name="registrationNameCountry" class="java.lang.String"/>
+	<parameter name="registrationArea" class="java.lang.String"/>
+	<parameter name="registrationLocality" class="java.lang.String"/>
+	<parameter name="registrationStreet" class="java.lang.String"/>
+	<parameter name="registrationHouse" class="java.lang.String"/>
+	<parameter name="registrationConstruction" class="java.lang.String"/>
+	<parameter name="registrationApartment" class="java.lang.String"/>
+	<parameter name="registrationOkato" class="java.lang.String"/>
+	<parameter name="registrationRegion" class="java.lang.String"/>
+	<parameter name="residenceIndex" class="java.lang.String"/>
+	<parameter name="residenceCode" class="java.lang.String"/>
+	<parameter name="residenceNameCountry" class="java.lang.String"/>
+	<parameter name="residenceArea" class="java.lang.String"/>
+	<parameter name="residenceLocality" class="java.lang.String"/>
+	<parameter name="residenceStreet" class="java.lang.String"/>
+	<parameter name="residenceHouse" class="java.lang.String"/>
+	<parameter name="residenceConstruction" class="java.lang.String"/>
+	<parameter name="residenceApartment" class="java.lang.String"/>
+	<parameter name="residenceOkato" class="java.lang.String"/>
+	<parameter name="residenceRegion" class="java.lang.String"/>
+	<parameter name="phoneNumbers" class="java.lang.String"/>
+	<parameter name="foreign" class="java.lang.String"/>
+	<parameter name="foreignOfficialType" class="java.lang.String"/>
+	<parameter name="foreignOfficialPosition" class="java.lang.String"/>
+	<parameter name="foreignRelative" class="java.lang.String"/>
+	<parameter name="foreignRelativeRelationType" class="java.lang.String"/>
+	<parameter name="foreignRelativeOfficialType" class="java.lang.String"/>
+	<parameter name="foreignRelativeNameAndPosition" class="java.lang.String"/>
+	<parameter name="russian" class="java.lang.String"/>
+	<parameter name="russianOfficialType" class="java.lang.String"/>
+	<parameter name="russianOfficialPosition" class="java.lang.String"/>
+	<parameter name="russianRelative" class="java.lang.String"/>
+	<parameter name="russianRelativeRelationType" class="java.lang.String"/>
+	<parameter name="russianRelativeOfficialType" class="java.lang.String"/>
+	<parameter name="russianRelativeNameAndPosition" class="java.lang.String"/>
+	<parameter name="international" class="java.lang.String"/>
+	<parameter name="internationalOfficialPosition" class="java.lang.String"/>
+	<parameter name="internationalRelative" class="java.lang.String"/>
+	<parameter name="internationalRelativeRelationType" class="java.lang.String"/>
+	<parameter name="internationalRelativeNameAndPosition" class="java.lang.String"/>
+	<parameter name="firstContractDate" class="java.lang.String"/>
+	<parameter name="terroristsListString" class="java.lang.String"/>
+	<parameter name="blockagesListString" class="java.lang.String"/>
+	<parameter name="invalidDocsString" class="java.lang.String"/>
+	<parameter name="resultChecksListString" class="java.lang.String"/>
+	<parameter name="riskLevelDesc" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="755">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="21" width="275" height="13" uuid="37c39f24-3972-4994-af7c-1f9d8bcc9c6c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="9" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Раздел 1. Информация о лице]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="0" width="269" height="20" uuid="3839077a-a4a9-4bd9-94bc-5ec689fd3d6b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[АНКЕТА ФИЗИЧЕСКОГО ЛИЦА]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="34" width="275" height="12" uuid="ad1d2f13-eef3-49e7-b512-fc16d0c6a112">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Часть 1. Общие данные]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="48" width="25" height="22" uuid="7e9adbc7-9d78-4d3b-a731-b35098997ac2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="48" width="221" height="22" uuid="c41d2eea-d501-4197-b122-3299397761ed"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Фамилия, имя и отчество  (если иное не вытекает из
+закона или национального обычая)
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="48" width="309" height="22" uuid="44186414-a9d3-42ab-b546-de329a87e24a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fullName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="70" width="221" height="22" uuid="68da0fb8-9c1e-4142-831e-a87d810abe11"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Идентификационный номер налогоплательщика (при
+наличии)
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="70" width="309" height="22" uuid="a7f1fc84-5601-4816-81a7-bef2203c423f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{INN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="70" width="25" height="22" uuid="5228e2f4-0eda-4f7f-af48-bda9788ba062"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="92" width="221" height="21" uuid="843fc56c-083e-42b3-9467-e5477e692e6c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Страховой номер индивидуального лицевого счета
+(СНИЛС)
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="92" width="309" height="21" uuid="ac3eb22e-4f3b-47c9-8c4e-2ba928bd5e55"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{snils}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="92" width="25" height="21" uuid="d31a4789-652a-4f97-809d-a5c44e4cc3b4"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="233" width="555" height="15" uuid="b081f22b-0683-4ad2-a257-ba158b955b2d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Заполняется гражданами и лицами без гражданства]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="248" width="221" height="44" uuid="53d564ad-5fe6-404c-b7e6-83b0efd09e04"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Данные миграционной карты]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="248" width="309" height="44" uuid="958f9c76-4ef6-4a49-8b7b-83ab6646b669"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Серия миграционной карты:  " + $P{migrationCardSeries} +"\n" +
+"Номер миграционной карты:  " + $P{migrationCardNumber} +"\n" +
+"Дата начала срока пребывания:  " + $P{migrationCardStartDate} +"\n" +
+"Дата окончания срока пребывания:   " + $P{migrationCardEndDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="248" width="25" height="44" uuid="5fe239ef-d991-456f-bb0b-e05b24e2453c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="292" width="25" height="78" uuid="b6721bca-7af4-46d3-b8bd-07c44e052eca"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[8]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="292" width="309" height="78" uuid="51ba313d-232b-4297-b511-0623c4760b6c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Наименование документа:  " + $P{residencePermitCardName} +"\n" +
+"Серия документа (если имеется):  " + $P{residencePermitCardSeries} +"\n" +
+"Номер документа:  " + $P{residencePermitCardNumber} +"\n" +
+"Дата начала срока действия права пребывания (проживания): " + $P{residencePermitCardStartDate} +"\n" +
+"Дата окончания срока действия права пребывания (проживания):    " + $P{residencePermitCardEndDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="292" width="221" height="78" uuid="82953f11-2c7d-4e6c-b57f-04ee98bd8fac"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Данные документа, подтверждающего право
+иностранного гражданина или лица без гражданства на
+пребывание (проживание) в Российской Федерации
+(Виза, вид на жительство, разрешение на временное
+проживание, иной документ, подтверждающий в
+соответствии с законодательством РФ право
+иностранного гражданина на пребывание (проживание) в
+РФ)
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="370" width="221" height="103" uuid="b21769e9-49a5-44d5-9314-51ea04e4bdc6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Адрес места жительства (регистрации)]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="370" width="309" height="103" uuid="bb1b5891-d7fe-4f39-af42-89e2e886b896"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement markup="styled">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Почтовый индекс:  " + $P{registrationIndex} +"\n" +
+"Код страны:   " + $P{registrationCode} +"\n" +
+"Наименование страны:  " + $P{registrationNameCountry} +"\n" +
+"Код субъекта:  " + $P{registrationOkato} +"\n" +
+"Наименование субъекта РФ:  " + $P{registrationRegion} +"\n" +
+"Район :  " + $P{registrationArea} +"\n" +
+"Населенный пункт:  " + $P{registrationLocality} +"\n" +
+"Улица:  " + $P{registrationStreet} +"\n" +
+"Дом (владение):  " + $P{registrationHouse} +"\n" +
+"Корпус (строение): " + $P{registrationConstruction} +"\n" +
+"Офис (квартира): " + $P{registrationApartment}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="370" width="25" height="103" uuid="4d13818a-4351-40c2-a991-2bb467eec806"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="473" width="221" height="103" uuid="8b3272af-ae9a-4651-8d8e-f6b5d2b9c771"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Адрес места пребывания (фактического проживания)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="473" width="25" height="103" uuid="0623f079-d9f2-4df9-a354-95894072d59a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[10]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="160" width="309" height="13" uuid="9e82d2d7-d042-4354-a00c-d6a4c9bdc2c7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{insuredCitizenship}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="160" width="25" height="13" uuid="ed630bba-c9f8-451e-b77d-b66ef1dbf1be"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="160" width="221" height="13" uuid="d91aa8cd-8d34-46b5-829b-2fa23913e574"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Гражданство]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="576" width="221" height="36" uuid="c199e1e9-53ca-4f94-bf63-2713bf63a323"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Номера контактных телефонов  и факсов (если имеются)]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="576" width="309" height="36" uuid="9b1ff6ef-c321-4981-bb36-12bb11343569"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{phoneNumbers}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="576" width="25" height="36" uuid="face04a1-bf8e-43d7-b60a-b165391ad4d5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[11]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="612" width="555" height="15" uuid="08f84262-cd32-48b5-80cf-976b6a1f48e5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Должность клиента, наименование и адрес работодателя]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="627" width="309" height="14" uuid="b8535cdf-c11a-4481-b1b1-819ab62fcb85"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="627" width="25" height="14" uuid="e31d3382-bb85-418d-891d-2eb8d79334f5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[12]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="627" width="221" height="14" uuid="2df54554-9410-4913-b54b-3fc77fa086c6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Должность клиента  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="641" width="309" height="14" uuid="68177c99-5f34-4f29-b5b7-ecf067c4521d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="641" width="25" height="14" uuid="04f85d17-4686-49e9-a99b-29d60abfde58"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[13]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="641" width="221" height="14" uuid="5b0b274c-4b6b-4432-959a-b313dd56cb5b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Наименование работодателя  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="655" width="221" height="96" uuid="b20268d9-9783-46e5-ad9d-08f33c8fc9ce"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Адрес работодателя  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="655" width="309" height="96" uuid="57f907db-7242-4d7d-8161-2f8d3fac8eaa"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Код страны: " + "\n" +
+"Наименование страны: " + "\n" +
+"Код субъекта: " + "\n" +
+"Наименование субъекта РФ: " + "\n" +
+"Район: " + "\n" +
+"Населенный пункт: " + "\n" +
+"Улица: " + "\n" +
+"Дом (владение): " + "\n" +
+"Корпус (строение): " + "\n" +
+"Офис (квартира): "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="655" width="25" height="96" uuid="a33f9990-481d-44b9-92e5-8f6a2f78297e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[14]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="246" y="473" width="309" height="103" uuid="24ec08bd-9268-4e67-b881-cb7278783da5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement markup="styled">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Почтовый индекс:  " + $P{residenceIndex} +"\n" +
+"Код страны:   " + $P{residenceCode} +"\n" +
+"Наименование страны:  " + $P{residenceNameCountry} +"\n" +
+"Код субъекта:  " + $P{residenceOkato} +"\n" +
+"Наименование субъекта РФ:  " + $P{residenceRegion} +"\n" +
+"Район :  " + $P{residenceArea} +"\n" +
+"Населенный пункт:  " + $P{residenceLocality} +"\n" +
+"Улица:  " + $P{residenceStreet} +"\n" +
+"Дом (владение):  " + $P{residenceHouse} +"\n" +
+"Корпус (строение): " + $P{residenceConstruction} +"\n" +
+"Офис (квартира): " + $P{residenceApartment}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="753" width="100" height="1" uuid="093d59e0-e218-43aa-91ab-36462a2d0b72"/>
+			</break>
+			<frame>
+				<reportElement positionType="Float" x="0" y="173" width="555" height="60" uuid="16aefce1-6d4a-4298-ad6c-3daee4ba9352"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="246" y="0" width="309" height="60" uuid="37297dbe-e9c5-497c-93ea-6c4eece15357"/>
+					<box topPadding="0" bottomPadding="1">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="4"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Наименование документа:  " + $P{insuredIdDocName} +"\n" +
+"Серия документа:  " + $P{insuredIdDocSeries} +"\n" +
+"Номер документа:  " + $P{insuredIdDocNumber} +"\n" +
+"Орган, выдавший документ:  " + $P{insuredIdDocIssuedBy} +"\n" +
+"Дата выдачи документа:  " + $P{insuredIdDocIssuedDate} +"\n" +
+"Код подразделения (если имеется):  " + $P{insuredIdDivisionCode}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="25" y="0" width="221" height="60" uuid="af84d3d0-710c-4895-b17d-f47bbd0d5811"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="3" spacingBefore="2"/>
+					</textElement>
+					<text><![CDATA[Реквизиты документа, удостоверяющего личность]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="25" height="60" uuid="3a989402-dcbb-4e7a-941d-d39c641e2e57"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<text><![CDATA[6]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="113" width="555" height="47" uuid="91ad28b3-6064-487b-a1ca-dcbfbbc250c3"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="246" y="0" width="309" height="47" uuid="75a4f21c-bf4d-40e5-85d9-f8a8f74b427c"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement markup="styled">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="4"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Дата рождения: " + $P{birthDate} +"\n" +
+"Наименование страны:  " + $P{birthCountry} +"\n" +
+"Наименование субъекта РФ: " + $P{birthRegion} +"\n" +
+"Район : " + $P{birthArea} +"\n" +
+"Населенный пункт: " + $P{birthPlace}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="25" y="0" width="221" height="47" uuid="0bba5261-ab8d-4984-8530-a120f71b71d6"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="3" spacingBefore="2"/>
+					</textElement>
+					<text><![CDATA[Дата и место рождения]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="0" width="25" height="47" uuid="fe8cfac7-915a-4450-a24e-0ef9ea792011"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<text><![CDATA[4]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="780">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="15" uuid="520c4762-3a9e-4ef4-aab9-7b681c12bc99">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Должность клиента, наименование и адрес работодателя]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="15" width="25" height="114" uuid="5858e504-914b-46f6-a7d7-d1fe75cd1dc9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[15]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="15" width="530" height="114" uuid="132aa6c5-6bae-4821-b8a1-0d0636c0fd2a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Принадлежность к ИПДЛ, ДЛПМО, РПДЛ
+Иностранное публичное должностное лицо (ИПДЛ) - любое назначаемое или избираемое лицо, занимающее должность в
+законодательном, исполнительном, административном или судебном органе иностранного государства и выполняющее для него какую-
+либо публичную функцию.
+государственного предприятия от их имени.
+Российское публичное должностное лицо (РПДЛ) - лицо, замещающее (занимающее) государственную должность Российской
+Федерации, должность члена Совета директоров Центрального банка Российской Федерации, должность федеральной государственной
+службы, назначение на которую и освобождение от которой осуществляется Президентом Российской Федерации или Правительством
+Российской Федерации, должность в Центральном банке Российской Федерации, государственной корпорации и иной организации,
+созданной Российской Федерацией на основании федеральных законов, включенную в перечень должностей, определяемый
+Президентом Российской Федерации.
+
+Должностное лицо публичной международной организации (МПДЛ) - международный гражданский служащий или любое
+физическое должностное лицо, выполняющее какую-либо публичную функцию для иностранного публичного ведомства или
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="129" width="309" height="40" uuid="acbca58f-52d6-430c-8488-ea446a9a03ab"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{foreign} == "ДА" ?  $P{foreign}  + "\n" +"Признак ИПДЛ: "+ $P{foreignOfficialType} + "\n" + "Должность: " +$P{foreignOfficialPosition}: "НЕТ")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="129" width="221" height="40" uuid="4ba3e444-28ec-4455-b97e-52fd72dfb386"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="3"/>
+				</textElement>
+				<text><![CDATA[Являетесь ли Вы иностранным публичным должностным
+лицом (ИПДЛ)?
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="129" width="25" height="40" uuid="237f02e9-b367-42a4-950f-91a54c8d555f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[15.1]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="169" width="309" height="47" uuid="161fa8b9-4a0b-4344-8cd2-79f7e365894f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{foreignRelative} == "ДА" ? $P{foreignRelative}  + "\n" +"Степень родства: "+$P{foreignRelativeRelationType}+"\n"+"Признак ИПДЛ: "+ $P{foreignRelativeOfficialType} + "\n" + "ФИО, должность, место работы: " +$P{foreignRelativeNameAndPosition}: "НЕТ")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="169" width="25" height="47" uuid="75b2c8c4-f03d-429e-b043-c177b66ed366"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[15.2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="169" width="221" height="47" uuid="b76fecf7-2783-406d-b5bf-fad50b7f70be"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="3"/>
+				</textElement>
+				<text><![CDATA[Являетесь ли Вы ближайшим окружением иностранного
+публичного должностного лица?
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="216" width="309" height="30" uuid="311b583b-25e4-4aa1-9bbb-b163070e0463"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{russian} == "ДА" ?  $P{russian}  + "\n" +"Признак ИПДЛ: "+ $P{russianOfficialType} + "\n" + "Должность: " +$P{russianOfficialPosition}: "НЕТ")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="216" width="25" height="30" uuid="bb5356bc-b400-4e9e-b83c-8027fa1b1e39"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[15.3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="216" width="221" height="30" uuid="9b577ec8-3283-47f5-8107-c605d80014a6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="3"/>
+				</textElement>
+				<text><![CDATA[Являетесь ли Вы российским публичным должностным
+лицом (РПДЛ)?
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="246" width="25" height="47" uuid="05fb821b-1596-4bd3-85a3-86e45a6326bd"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[15.4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="246" width="221" height="47" uuid="2eedd41d-aeff-45be-8f9b-c0222082409e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="3"/>
+				</textElement>
+				<text><![CDATA[Являетесь ли Вы ближайшим окружением российского
+публичного должностного лица?
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="246" width="309" height="47" uuid="096f9cf9-65d8-47e5-97cb-4aeb67bed466"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{russianRelative} == "ДА" ? $P{russianRelative}  + "\n" +"Степень родства: "+$P{russianRelativeRelationType}+"\n"+"Признак ИПДЛ: "+ $P{russianRelativeOfficialType} + "\n" + "ФИО, должность, место работы: " +$P{russianRelativeNameAndPosition}: "НЕТ")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="293" width="25" height="21" uuid="f4cdfad4-02a4-4907-ad3c-61e96f2c5f95"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[15.5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="293" width="221" height="21" uuid="445bdf01-48cd-4e05-9312-7f7153b1b25e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="0"/>
+				</textElement>
+				<text><![CDATA[Являетесь ли Вы должностным лицом публичной
+международной организации?
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="293" width="309" height="21" uuid="249feb45-b341-48ee-8a10-b78543f56dcf"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{international} == "ДА" ?  $P{international}  + "\n" + "Должность: " +$P{internationalOfficialPosition}: "НЕТ")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="314" width="25" height="30" uuid="4d571400-7715-40b6-b5a3-b7fcc1e63ab7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[15.6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="314" width="221" height="30" uuid="8312d432-6dde-45c2-8b3b-9feeab069de3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="3"/>
+				</textElement>
+				<text><![CDATA[Являетесь ли Вы ближайшим окружением должностного
+лица публичной международной организации?
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="314" width="309" height="30" uuid="d79f6a07-dab8-48fd-8a88-ed4bde2e3f21"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{internationalRelative} == "ДА" ? $P{internationalRelative}  + "\n" +"Степень родства: "+$P{internationalRelativeRelationType}+"\n"+ "ФИО, должность, место работы: " + $P{internationalRelativeNameAndPosition}: "НЕТ")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="371" y="368" width="93" height="30" uuid="65b9a6e1-e3aa-47d5-b0f7-00eab318c3c0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true">Страховой риск</style>
+<style isItalic="true" size="7">указывается наименование риска</style>
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="281" y="368" width="90" height="30" uuid="afa4767a-e6fa-44aa-a8c0-c40062a91033">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true">Информация о налоговом резидентстве</style>
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="80" y="368" width="101" height="30" uuid="300c607c-2c0b-43ab-9c9c-181b33c832b3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true">Дата и место рождения (с указанием страны)</style>
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="464" y="368" width="91" height="30" uuid="602fb326-4ea8-46d5-89cb-7064142d4466">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true">Доля в выплате, %</style>
+<style isItalic="true" size="7">указывается доля в страховой выплаты (в процентах)</style>
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="368" width="80" height="30" uuid="08835422-fe15-454f-9ab9-d47c17f634f9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true">Ф.И.О.</style>
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="181" y="368" width="100" height="30" uuid="e008a994-c509-48f9-9d9c-01e45614f793">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true">Адрес места жительства или пребывания</style>
+]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="398" width="555" height="20" uuid="e83c30b4-5ecd-4114-bdac-1803b43eb237">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="com.jaspersoft.studio.components.autoresize.next" value="true"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="1e9b8acb-f73c-44d6-8e89-de36350b1860">
+						<dataSourceExpression><![CDATA[$P{RecipientSubreportDataSource}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="ed561348-0d07-4c46-aefb-938f6dd9ce8f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" x="0" y="0" width="80" height="20" uuid="a3f66a58-a2b4-409c-be89-5a0c60aca3a2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+									<paragraph leftIndent="2" rightIndent="2"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{FIO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="101" uuid="d9973f28-961a-4fb5-8d4a-830bda82cb04">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" x="0" y="0" width="101" height="20" uuid="a3e6ded0-6a06-4eba-914a-1a01d44fd7b1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+									<paragraph leftIndent="2" rightIndent="2"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{birthDateAndBirthPlaceAndBirthCountry}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="2537a230-fa82-4020-ac50-79401f5951a4">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" x="0" y="0" width="100" height="20" uuid="bd5d6a70-6ded-4c38-95be-3891e63fd8d8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+									<font fontName="Arial" size="8"/>
+									<paragraph leftIndent="2" rightIndent="2"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="743135b3-44be-44e9-9d76-713d3fe71e4a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" x="0" y="0" width="90" height="20" uuid="d52f838f-79c5-457d-8700-fb382db5e7dc"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+									<font fontName="Arial" size="8"/>
+									<paragraph leftIndent="2" rightIndent="2"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{taxResidence}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="93" uuid="aab8f337-03a7-4ba2-976c-76f838368dee">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" x="0" y="0" width="93" height="20" uuid="260d1d5d-2f4b-4758-b10c-cdc4bdc4b700"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+									<paragraph leftIndent="2" rightIndent="2"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{riskName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="91" uuid="87aeae13-5e59-42c5-9cf1-159258895923">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:detailCell style="Table_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" x="0" y="0" width="91" height="20" uuid="199a6ef9-ff04-4877-b251-54bfdaf1ae8a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+									<paragraph leftIndent="2" rightIndent="2"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{share} + "%"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="349" width="275" height="12" uuid="e7cc9c07-fc2c-4654-ba6d-eae5e1bc1546">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Часть 1.1 Сведения о наличии выгодоприобретателей]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="427" width="275" height="14" uuid="ab704d2e-f229-45ff-8bda-5455ae68a649">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Часть 1.2 Сведения о наличии представителей
+
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="442" width="275" height="14" uuid="5c011816-e7ae-48fd-919c-dfbe284fe8b3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Сведения отсутствуют.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="458" width="275" height="14" uuid="fdffd943-54d6-4fd1-a154-2f0378a0b340">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Часть 1.3 Сведения о наличии бенефициарных владельцев]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="472" width="275" height="15" uuid="df6494c6-10c7-41b8-befa-165136f51b1b"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fullName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="512" width="275" height="14" uuid="4b8e4746-125f-4a65-ba17-fb17e839770a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[«___» ___________20___ г.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="296" y="508" width="241" height="30" uuid="15f8d8d6-dc36-4372-9e25-e252e752876c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[___________________________________/_______________
+подпись (клиента, представителя клиента) / расшифровка]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="774" width="99" height="1" uuid="210ae1b7-11e3-46c1-a151-a4a7bbaa193e"/>
+			</break>
+		</band>
+		<band height="488">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="10" width="275" height="12" uuid="4b3d04b9-8a55-429e-b7fc-2f28ca4547c8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Часть 2. Отметки Общества]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="26" width="221" height="44" uuid="ab23bba4-38fb-4d13-b7c7-662da332a019"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Дата начала отношений с клиентом
+(дата заключения первого договора на проведение
+операций (сделок) с денежными средствами или иным
+имуществом)
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="26" width="25" height="44" uuid="43158cc9-a924-4d9f-87f5-a80701088980"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="26" width="309" height="44" uuid="3e16206c-5ab1-4b12-87be-4ef4c5e3640a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firstContractDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="70" width="221" height="20" uuid="9f00bc18-dae0-4108-9c3c-fd7f2af23909"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Дата заполнения анкеты клиента  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="70" width="25" height="20" uuid="77b4c4cf-bf41-4be3-b4dc-58ab78e85489"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="70" width="309" height="20" uuid="4381ab1c-b24d-47f5-936d-ff5af1d8e793"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firstContractDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="110" width="25" height="44" uuid="e1d107cc-50dc-4a9e-a43e-fd2f95dfb9d5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="110" width="309" height="44" uuid="1ba229fc-9cf6-4c2a-99ec-e3c470fb10ef"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ФИО: Королев Сергей Геннадьевич" + "\n"+
+"Должность: Главный специалист УОП"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="110" width="221" height="44" uuid="ac0161f0-f11a-4980-9f78-ffe4571bc09a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Фамилия, имя, отчество (если иное не вытекает из
+закона или национального обычая) / Должность
+работника, принявшего решение о приёме клиента на обслуживание
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="180" width="25" height="15" uuid="f90c0903-93cd-4b63-a941-f61e343bf7d8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="246" y="180" width="309" height="15" uuid="868ccfa8-e5a5-4c5c-95db-ccbdb885f179">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Страхование жизни ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="180" width="221" height="15" uuid="93ee7b0a-9551-4a91-8669-62e4ed34c0cb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Сведения о целях установления деловых отношений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="246" y="195" width="309" height="15" uuid="c9659617-c5c5-4b5b-8d00-f1554cf5e434">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Долгосрочные ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="195" width="221" height="15" uuid="f2322695-6e10-485a-92b4-b13be054f59e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Сведения о предполагаемом характере деловых
+отношений
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="195" width="25" height="15" uuid="c778cfea-ed52-4b07-9f70-b77617a47208"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="210" width="221" height="25" uuid="2d665b02-1a7f-4c69-8ff7-d05eb531a0d7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Сведения о целях финансово хозяйственной
+деятельности
+(о планируемых операциях)
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="246" y="210" width="309" height="25" uuid="051d943c-312e-4da0-adef-09a6e5f5f1cc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Страхование жизни ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="210" width="25" height="25" uuid="5303b809-2226-4f80-a41c-3bc5043560af"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="250" width="221" height="15" uuid="5e79af18-20e0-441d-8394-1a9f55673af9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Сведения о финансовом положении]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="235" width="221" height="15" uuid="b8b73092-04ba-4e07-951e-af30f53c4951"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Сведения о деловой репутации]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="246" y="235" width="309" height="15" uuid="3557cafc-cf22-482b-bd7c-862a57796934">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Устойчивая ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="235" width="25" height="15" uuid="9f376a73-d92f-4d39-bcf9-de42e3104953"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="250" width="25" height="15" uuid="788d184e-253b-4fae-ac9f-0215b8db2cf5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="246" y="250" width="309" height="15" uuid="c8fce623-f6ef-4094-ad2d-2d557c67cef4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Устойчивое ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="246" y="265" width="309" height="25" uuid="2af9bfbf-2394-4f4a-baff-d58480f2bb77">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Личные накопления ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="265" width="221" height="25" uuid="10f1ff09-a502-4793-9982-373ac8b4c703"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Сведения об источниках происхождения денежных
+средств и (или) иного имущества
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="265" width="25" height="25" uuid="0c3e648e-0eca-4cdb-a4b0-851ba1cde57b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[11]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="246" y="290" width="309" height="34" uuid="93f71cd9-9ae3-420a-b043-d8d8e87a0ac0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="290" width="221" height="34" uuid="5d1de386-8365-46e1-be1b-1a335ee6954d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Сведения о величине зарегистрированного и
+оплаченного уставного (складочного) капитала или
+величине уставного фонда, имущества
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="290" width="25" height="34" uuid="21f0e9a3-7655-4369-acf7-86928532e4f2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[12]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="246" y="324" width="309" height="20" uuid="d787afa5-b06d-4d81-9a6f-3e41ed746114">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="324" width="25" height="20" uuid="d39d9383-a33a-4d4b-9191-f777760dde4c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[13]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="324" width="221" height="20" uuid="4f40df2b-38a7-4e49-b531-e1535113b035"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Иная контактная информация  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="344" width="555" height="15" uuid="6d814406-c5b9-4256-8ede-257318f881c8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Результаты проверки]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="359" width="25" height="44" uuid="e64f7402-96a8-4f43-8722-133156920f69"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[14]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="246" y="359" width="309" height="44" uuid="50e07295-a6d6-4b46-985a-93eff1146861"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{invalidDocsString}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="25" y="359" width="221" height="44" uuid="fa0c40fa-27bd-4db1-9a75-2247972fdcf0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="3" spacingBefore="2"/>
+				</textElement>
+				<text><![CDATA[Проверка действительности документа
+удостоверяющего личность на официальном сайте
+ФМС России http://services.fms.gov.ru
+]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="0" y="403" width="555" height="20" uuid="c65c8c29-af76-40ff-81b2-e57771822f1c"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="30" width="555" height="19" uuid="fcbd4948-143f-44e9-9b07-10257361f8cd"/>
+					<box topPadding="3" leftPadding="0" bottomPadding="3" rightPadding="0">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="styled">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="25" spacingBefore="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{terroristsListString}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="25" y="0" width="530" height="30" uuid="bfcb005e-421c-4dd8-915c-f8ea055aed32"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="3" rightIndent="6"/>
+					</textElement>
+					<text><![CDATA[Наличие сведений о клиенте - физическом лице в перечне организаций и физических лиц, в отношении которых имеются сведения об их причастности к экстремистской деятельности или терроризму, размещенные в сети Интернет на официальном сайте уполномоченного органа]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="0" width="25" height="30" uuid="3dfe6303-e99b-48ea-b412-4c2ecd69cc06"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<text><![CDATA[15]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="423" width="555" height="65" uuid="084d9b4b-6e9c-48d8-b0ac-037cfa95e725"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="45" width="555" height="20" isRemoveLineWhenBlank="true" uuid="17a06d38-7ab2-4475-909e-40c5e397ba0e"/>
+					<box topPadding="3" leftPadding="0" bottomPadding="2" rightPadding="0">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="25" spacingBefore="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{blockagesListString}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="25" y="0" width="530" height="45" isRemoveLineWhenBlank="true" uuid="e41443bb-2e7d-49d7-8c5d-4b28c45f4a79"/>
+					<box topPadding="0">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="3" rightIndent="6"/>
+					</textElement>
+					<text><![CDATA[Наличие сведений о клиенте - физическом лице в решении о применении мер по замораживанию (блокированию) денежных средств или иного имущества, принадлежащих организации или физическому лицу, в отношении которых имеются достаточные основания подозревать их причастность к террористической деятельности (в том числе к финансированию терроризма), размещенные в сети Интернет на официальном сайте уполномоченного органа
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="0" width="25" height="45" isRemoveLineWhenBlank="true" uuid="2bb59cf2-c7b5-4c48-a52f-a1f9cf2b6b03"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<text><![CDATA[16]]></text>
+				</staticText>
+			</frame>
+			<break>
+				<reportElement x="0" y="4" width="100" height="1" uuid="3ce8392a-047a-46b0-8090-28e6d42f9a86"/>
+			</break>
+			<frame>
+				<reportElement x="0" y="90" width="560" height="20" uuid="10535b18-8103-4fe5-83be-e29b614e1d18"/>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="25" height="20" uuid="3e1ba04b-c3a0-4eb9-87f0-c2866e202c40"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<text><![CDATA[3]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="246" y="0" width="309" height="20" uuid="5ab4a816-6b8e-45e4-8a74-ad0bd74e9609"/>
+					<box bottomPadding="2">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph lineSpacing="Single" leftIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{resultChecksListString}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="25" y="0" width="221" height="20" uuid="2c7abfe5-5f69-4fcf-9895-541ffd9fb45d"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="3" spacingBefore="2"/>
+					</textElement>
+					<text><![CDATA[Дата обновления анкеты клиента]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="154" width="555" height="26" uuid="0d74b8f0-ad4f-4d24-aaf8-3997be06ec1f"/>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="25" y="0" width="221" height="26" uuid="91d1b452-de41-4c1a-b016-fa94f4d67eab"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="3" spacingBefore="2"/>
+					</textElement>
+					<text><![CDATA[Сведения о степени (уровне) риска]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="25" height="26" uuid="f6dc34f8-2347-4541-b0ac-f2e47b0ebc27"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<text><![CDATA[5]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="246" y="0" width="309" height="26" uuid="dca2a38a-52f1-4fa7-ae7d-046f0bdac02e"/>
+					<box topPadding="0">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph lineSpacing="Single" leftIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{riskLevelDesc} +"."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="222">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="150" uuid="d0e1e2a1-bc2a-4eef-b1ec-8fd4224522f9"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="246" y="0" width="309" height="150" isRemoveLineWhenBlank="true" uuid="171f139d-67da-4df8-9d68-d0b665415179"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="2" rightPadding="0">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["(нет данных о проверках)"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="25" y="0" width="221" height="150" isRemoveLineWhenBlank="true" uuid="b206eb2c-b5fc-4649-a891-abcb79ce3a97"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+						<paragraph leftIndent="2" rightIndent="1"/>
+					</textElement>
+					<text><![CDATA[Наличие сведений о клиенте-физическом лице в Перечне ФРОМУ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="25" height="150" isRemoveLineWhenBlank="true" uuid="edc77dc6-7aec-46a3-92e7-b1cbd55104c2"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<text><![CDATA[17]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="33" y="186" width="230" height="30" uuid="fb11e140-d444-4049-9032-80559391ef80">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single" leftIndent="0" rightIndent="0" tabStopWidth="5"/>
+				</textElement>
+				<text><![CDATA[________________________________________________
+Ф.И.О, должность работника,                             заполнившего/обновившего анкету  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="290" y="180" width="264" height="30" uuid="90d457c2-32d7-4a24-999d-3259854c23fe">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[________________________________________________
+Подпись  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="70" y="176" width="156" height="10" uuid="9e7b0d01-d486-4aa2-9e6b-a20638fb48b3"/>
+				<textElement markup="styled">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Королев С.Г. Главный специалист УОП
+________________________________________________
+                            Ф.И.О, должность работника,                             заполнившего/обновившего анкету  ]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

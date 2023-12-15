@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>smedservice-insurance-service</artifactId>
+        <groupId>ru.softlab.efr.services</groupId>
+        <version>0.0.2-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>smedservice-insurance-service-client</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>ru.softlab.efr.infrastructure</groupId>
+            <artifactId>transport-support</artifactId>
+            <version>${efr.transport.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.common</groupId>
+            <artifactId>utilities</artifactId>
+            <version>${efr.utilities.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.softlab.efr.services</groupId>
+            <artifactId>smedservice-insurance-service-model</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-client-api-client-yaml</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/../api-client.yaml</inputSpec>
+                            <language>ru.softlab.efr.common.swagger.generator.backend.ClientCodegen</language>
+                            <modelPackage>ru.softlab.efr.services.insurance.model.client</modelPackage>
+                            <apiPackage>ru.softlab.efr.services.insurance</apiPackage>
+                            <output>${project.basedir}</output>
+                            <configOptions>
+                                <additional-properties>applicationName=insurance-service</additional-properties>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-client-api-yaml</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/../api.yaml</inputSpec>
+                            <language>ru.softlab.efr.common.swagger.generator.backend.ClientCodegen</language>
+                            <modelPackage>ru.softlab.efr.services.insurance.model.rest</modelPackage>
+                            <apiPackage>ru.softlab.efr.services.insurance</apiPackage>
+                            <output>${project.basedir}</output>
+                            <configOptions>
+                                <additional-properties>applicationName=insurance-service</additional-properties>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>ru.softlab.efr</groupId>
+                        <artifactId>swagger-backend-generator</artifactId>
+                        <version>${swagger.backend.generator}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>

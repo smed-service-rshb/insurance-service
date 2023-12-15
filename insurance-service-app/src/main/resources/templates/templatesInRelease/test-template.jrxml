@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RshbInsuranceChooseHealth" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="tableDataset" uuid="f13e6d36-5148-4ecc-bbe3-3035def80980">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="contractNumber" class="java.lang.String"/>
+	<parameter name="surname" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="patronymic" class="java.lang.String"/>
+	<parameter name="birthDate" class="java.lang.String"/>
+	<parameter name="contractStartDate" class="java.lang.String"/>
+	<parameter name="phoneNumber" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="631">
+			<staticText>
+				<reportElement x="80" y="0" width="400" height="15" uuid="13533ce6-dbe7-4b4d-9667-044ed58e5a09">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Open Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ДОГОВОР СТРАХОВАНИЯ (Страховой полис) «Выбери здоровье плюс» ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="15" width="200" height="15" uuid="b1030e44-bdf5-48a4-aaaf-f2be11f5788f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Open Sans" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["№ " + $P{contractNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="550" height="130" uuid="1d4eea10-38c3-4880-879f-4d32eb4ca9c2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[По настоящему Договору страхования (Страховому полису) «Выбери здоровье», являющемуся офертой (далее – Страховой полис, договор страхования) Страховщик предлагает Страхователю, в соответствии со статьей 435 Гражданского кодекса Российской Федерации, заключить договор добровольного страхования на нижеследующих условиях.
+Договор страхования заключается путем принятия и акцепта Страхователем настоящего Страхового полиса (оферты), подписанного Страховщиком. На основании ст. 435, 438 и п. 2 ст. 940 ГК РФ акцептом настоящего Страхового полиса (оферты) считается уплата страховой премии в соответствии с условиями, содержащимися в Страховом полисе. Договор страхования заключается на основании Условий страхования «Выбери здоровье», утвержденных приказом генерального директора Страховщика от «_______»________2018г. №__________ (Далее – Условия страхования). Положения, содержащиеся в Условиях страхования и не включенные в текст настоящего Страхового полиса, применяются к Договору страхования и обязательны для Страхователя (Выгодоприобретателя).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="171" width="130" height="112" backcolor="#C0C0C0" uuid="2ca31443-b24e-4580-b580-eaddad0fb35a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[СТРАХОВЩИК]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="171" width="416" height="112" uuid="00ed8b66-a12b-4377-899f-809f0801f972">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[ООО «РСХБ-Страхование жизни», www.rshbins-life.ru, адрес: г. Москва, Гагаринский пер., д. 3; тел. 8(495)7459955;
+<style isBold="true">Режим работы</style>: понедельник-четверг: с 9.00 до 18.00, пятница: с 9.00 до 16.45.
+<style isBold="true">Банковские реквизиты</style>: Расчетный счет: 40701810400000000158; ИНН 7704447253; Банк получателя: АО «РОССЕЛЬХОЗБАНК», г. Москва, БИК Банка получателя: 044525111, Корр. счет: 30101810200000000111,
+<style isBold="true">Лицензия</style> СЛ № 4358 (вид деятельности: добровольное личное страхование, за исключением добровольного страхования жизни), выдана Банком России без ограничения срока действия.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupBottom" mode="Opaque" x="0" y="291" width="130" height="229" backcolor="#C0C0C0" uuid="27a489d8-c21a-4cbf-b91d-32469f102b83">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[СТРАХОВАТЕЛЬ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="139" y="291" width="416" height="229" uuid="70843296-76f4-49bb-ad86-4cb04cdc058f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="-1" y="530" width="130" height="21" backcolor="#C0C0C0" uuid="b5a9672c-ebe1-4c61-8319-6891027516bc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[ЗАСТРАХОВАННОЕ ЛИЦО]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="138" y="530" width="416" height="21" uuid="41d5d2e8-d3e5-4ee8-a2c2-6cf1e947c55f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Страхователь, при соблюдении условий, предусмотренных п.1.4.4. Условий страхования.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerBottom" x="145" y="299" width="405" height="41" uuid="c7223a32-04c4-467d-8595-015f96872745">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Фамилия <style isItalic=\"true\" isUnderline=\"true\">  " +$P{surname} + "  </style>, имя <style isItalic=\"true\" isUnderline=\"true\">  " + $P{name} + "  </style>, отчество <style isItalic=\"true\" isUnderline=\"true\">  " + $P{patronymic} + "  </style> \nДата рождения <style isItalic=\"true\" isUnderline=\"true\">  " + $P{birthDate} + "  </style> Телефон <style isItalic=\"true\" isUnderline=\"true\">  " + $P{phoneNumber} + "  </style> \nАдрес электронной почты <style isItalic=\"true\" isUnderline=\"true\">  " + $P{email} + "  </style>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="-1" y="561" width="130" height="21" backcolor="#C0C0C0" uuid="8e41abb0-55cb-4a91-9075-1b9e745f2886">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[ВЫГОДОПРИОБРЕТАТЕЛЬ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="138" y="561" width="416" height="21" uuid="18a8b6e4-3197-4947-9340-e030c4034957">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Застрахованное лицо]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="592" width="130" height="29" backcolor="#C0C0C0" uuid="7ccb4ce6-b6a9-48d6-9587-20bd06e1fff5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[СЕРВИСНАЯ КОМПАНИЯ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="139" y="592" width="414" height="29" uuid="5b036380-182f-427c-acd0-5be6776fe87b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[__________
+Круглосуточная служба поддержки: ________ Адрес: ___________ Эл. адрес: __________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="139" y="340" width="415" height="180" uuid="e806d396-b92b-49ec-8077-12f47876b5c5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Страхователем по настоящему Договору страхования является дееспособное физическое лицо, отвечающее требованиям, предусмотренным в п.1.4.4. Условий страхования, заключившее со Страховщиком Договор страхования и указанное в Платежном поручении в качестве плательщика страховой премии. В Платежном поручении указываются по меньшей мере следующие данные о Страхователе: фамилия, имя, отчество, дата рождения. Страховщик не заключает на условиях, указанных в настоящем Страховом полисе, Договоры страхования в отношении лиц, не соответствующих условиям, указанным в п.1.4.4. Условий страхования. Данное условие является существенным условием Договора страхования. Если лицо, оплатившее Договор страхования, не соответствует условиям, указанным в 1.4.4. Условий страхования, Договор страхования является незаключенным ввиду несогласования Сторонами существенных условий договора (условия о Застрахованном лице). В таком случае Страховщик производит возврат поступивших денежных средств лицу, совершившему платеж, в порядке и сроки, предусмотренные Условиями страхования.]]></text>
+			</staticText>
+		</band>
+		<band height="772">
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="305" width="130" height="28" backcolor="#C0C0C0" uuid="bb32c71a-82bb-4c59-b048-66fb4687a866">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[ТЕРРИТОРИЯ ОКАЗАНИЯ УСЛУГ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="305" width="414" height="29" uuid="e0a8b74d-2697-40b8-bf2a-5f752d4f1dd3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Услуги, предусмотренные Страховым полисом оказываются на территории Российской Федерации.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="10" width="130" height="285" backcolor="#C0C0C0" uuid="8ae4b8bd-24b8-4545-b147-5a91368e72a6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[СТРАХОВЫЕ РИСКИ.
+СТРАХОВЫЕ СЛУЧАИ.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="10" width="414" height="285" uuid="53678cb7-f610-4702-873c-828126d6b7bd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[Страховым риском, согласно Договору страхования и Условиям страхования, является риск возникновения в период страхования обстоятельств, требующих оказания медицинских и иных услуг Застрахованному лицу в связи со Злокачественным новообразованием, а именно: злокачественным новообразованием, характеризующимся неконтролируемым ростом и распространением злокачественных клеток, проникающих в ткань различного гистологического типа, и относящимся к классам C00-C43, C45-C97 по МКБ-10, за исключением: С44 – эпителиальных опухолей кожи (включая базалиому, плоскоклеточный рак), C91.1 – хронического лимфоцитарного В – клеточного лейкоза, а также возникновением новообразования при наличии у Застрахованного лица ВИЧ-инфекции или СПИДа.
+Страховым случаем, с учетом всех положений, определений и исключений из страхования, предусмотренных Договором страхования и Условиями страхования, является обращение Застрахованного лица в Сервисную компанию для организации предусмотренных страхованием медицинских и иных услуг в связи с возникновением обстоятельств, предусмотренных настоящим пунктом, при одновременном наличии следующих условий: диагноз злокачественного новообразования подтвержден гистологическими или - в случае системных онкологических заболеваний - цитологическими исследованиями и заключением врача - онколога; диагноз указанного в настоящем пункте злокачественного новообразования установлен Застрахованному лицу впервые; диагноз указанного в настоящем пункте злокачественного новообразования установлен Застрахованному лицу в течение Периода страхования, по истечении периода ожидания; Застрахованное лицо обратилось в Сервисную компанию в течение Периода страхования. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="342" width="130" height="112" backcolor="#C0C0C0" uuid="19a2f52d-94de-4247-bb9e-42495d55a280">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[СРОК ДЕЙСТВИЯ ДОГОВОРА СТРАХОВАНИЯ
+
+
+
+
+
+
+ПЕРИОД СТРАХОВАНИЯ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="342" width="414" height="112" uuid="6fe544bc-abf2-4240-8802-c1ca87735d86">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold=\"true\">Срок действия договора страхования</style> составляет 1 (один) год с даты вступления Страхового полиса в силу.\n<style isBold=\"true\">Дата вступления договора страхования в силу</style> <style isItalic=\"true\" isUnderline=\"true\">  " + $P{contractStartDate} + "  </style>\n<style isBold=\"true\">Период страхования</style> начинается с 00 часов 00 минут 121 (Сто двадцать первого) дня с даты вступления Страхового полиса в силу и действует до окончания срока действия договора страхования.\nПри повторном заключении аналогичного Страхового полиса, Стороны при определении срока действия договора стрхования и периода страхования руководствуются положениями раздела 6 и 7 Условий страхования."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="463" width="130" height="106" backcolor="#C0C0C0" uuid="9442a5ec-6c62-4f1d-bb6e-a4e53c21c244">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[ПЕРИОД ОЖИДАНИЯ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="463" width="414" height="106" uuid="c78ed74a-8234-4d85-80ad-2a68b505f21f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true">120 (Сто двадцать) календарных дней</style> с даты вступления Страхового полиса в силу.
+В течение данного периода времени Страховщик не несет обязательств по организации оказания медицинских и иных услуг (из числа событий, предусмотренных договором страхования). Обращения Застрахованного лица в этот период не являются страховым случаем, организация услуг не производится, страховая выплата по данным событиям не осуществляется.
+При повторном заключении аналогичного Страхового полиса, Стороны при определении периода ожидания руководствуются положениями раздела 6 Условий страхования.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="577" width="130" height="28" backcolor="#C0C0C0" uuid="c13d13c8-31da-4d4d-ba89-baeaa383eab7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[СТРАХОВАЯ СУММА]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="577" width="191" height="28" uuid="85b18db8-1733-4774-b95a-7d2532c8cf41">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[9 000 000 (Девять миллионов) рублей]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="345" y="577" width="109" height="28" backcolor="#C0C0C0" uuid="845a0b1a-067b-4229-9a26-5bba9e75e9a6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[СТРАХОВОЙ ТАРИФ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="469" y="577" width="86" height="28" uuid="7bc04488-593f-4e00-9666-760d6cfb2a35">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<text><![CDATA[0,061%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="-1" y="613" width="130" height="112" backcolor="#C0C0C0" uuid="63954f67-f72f-4f2b-81f7-940313f725f8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[ПЕРИОД ОЖИДАНИЯ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="613" width="416" height="112" uuid="274df8cc-ae41-4263-b095-877891f261b8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0"/>
+				</textElement>
+				<text><![CDATA[Страховая премия составляет <style isBold="true">5 990 (Пять тысяч девятьсот девяносто) рублей 00 копеек</style>.
+Страховая премия подлежит оплате единовременно в день заключения договора страхования. Сумма и дата оплаты указываются на документе, подтверждающем оплату страховой премии.
+Если страховая премия не будет уплачена в срок, указанный в настоящем пункте, или будет уплачена в ином размере, чем указан в Страховом полисе, Договор страхования считается незаключенным ввиду несогласования его существенных условий, при этом денежные средства считаются ошибочно уплаченными и подлежат возврату лицу, совершившему платеж, в порядке и сроки, предусмотренные Условиями страхования.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="730" width="553" height="40" uuid="8e484c61-0a18-4cf8-bec1-a7b9868d9871">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true">Дата заключения</style> Страхового полиса соответствует дате вступления договора страхования в силу.
+<style isBold="true">Максимальный лимит ответственности Страховщика по оплате организации медицинских и иных услуг по Договору страхования в совокупности равен страховой сумме.</style>]]></text>
+			</staticText>
+		</band>
+		<band height="771">
+			<staticText>
+				<reportElement x="-1" y="8" width="556" height="763" uuid="981f76a7-cde3-49c5-bfc5-00c7e1bfddd6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0" tabStopWidth="25"/>
+				</textElement>
+				<text><![CDATA[1.	<style isBold="true">ОСНОВНЫЕ ПОЛОЖЕНИЯ ДОГОВОРА СТРАХОВАНИЯ</style>
+1.1.	В соответствии со Страховым полисом и Условиями, <style isBold="true">Сервисная компания организовывает и оплачивает следующие услуги при наступлении страхового случая</style>:
+		1.1.1. <style isBold="true">Медицинская транспортировка</style> (медицинская эвакуация) Застрахованного лица и одного сопровождающего к поставщику медицинских услуг и/или между медицинскими организациями и возвращение обратно (за исключением санавиации), включая трансфер автомобилем скорой медицинской помощи или на такси от места жительства до аэропорта (транспортного узла ), из аэропорта (транспортного узла) до отеля (апартаментов) и/или до медицинской организации, в которой будет проводиться лечение и обратно.
+		1.1.2. <style isBold="true">Оплата билета</style> эконом класса для Застрахованного и одного сопровождающего лица, а также при наличии медицинских показаний – оплата медицинского сопровождения и дополнительных мест и оборудования в самолете (ином средстве транспорта) при регулярном рейсе.
+		1.1.3. <style isBold="true">Проживание Застрахованного лица и одного сопровождающего</style>: подлежит оплате проживание в отеле (3 или 4 звезды) или эквивалентного стандартного номера в апартаментах с оплатой услуг, включенных в стоимость номера для Застрахованного лица и его сопровождающего.
+		1.1.4. <style isBold="true">Услуги по репатриации в случае смерти Застрахованного лица или сопровождающего во время поездки</style>: транспортировка останков Застрахованного лица или сопровождающего до места постоянного проживания Застрахованного лица или сопровождающего.
+		1.1.5. <style isBold="true">Лечение на территории Российской Федерации</style>, проводимое по поводу страхового случая:
+	1.1.5.1. <style isItalic="true">Медицинская помощь</style> в амбулаторных условиях, в условиях дневного стационара, в стационарных условиях, в том числе:
+		а) осмотры врачами, в том числе врачами-специалистами;
+		б) диагностические медицинские вмешательства, выполняемые медицинскими организациями по выбору Сервисной компании на территории Российской Федерации, в том числе лабораторные исследования, визуализирующие исследования, эндоскопические исследования, функциональная диагностика;
+		в) лечебные медицинские вмешательства в пределах страховой суммы (кроме имплантаций и трансплантации, которые производятся только в случаях, прямо указанных в Условиях и в объеме, указанном в Условиях), включающие хирургическое лечение, химиотерапию, лучевую терапию, иные методы лечения, научно обоснованные, разрешенные к применению на территории Российской Федерации и применяемые в рамках оказания медицинской помощи медицинскими организациями по выбору Сервисной компании, на территории Российской Федерации;
+		г) имплантация, необходимая в целях реконструктивного лечения груди после проведения мастэктомии, включая стоимость имплантатов на сумму <style isBold="true">(лимит ответственности) не более 900 000 (Девятисот тысяч) рублей</style> в период действия Договора на один страховой случай;
+		д) лекарственные средства, применяемые при лечении в стационарных условиях и в условиях дневного стационара.
+	1.1.5.2. В случае истечения срока действия договора страхования при неоконченном лечении в стационарных условиях, при условии, что сообщение о страховом случае было заявлено и согласовано Сервисной компанией в течение Периода страхования, оплате подлежат расходы на лечение в стационарных условиях до выписки Застрахованного лица из стационара, но не более 30 (Тридцати) календарных дней после окончания срока действия договора страхования.
+1.2.	Страховщик осуществляет оплату организации и оказания услуг медицинского и/или иного сопровождения Застрахованного лица (в том числе, но не ограничиваясь этим, при экстренной медицинской транспортировке Застрахованного лица), только в случае наличия медицинских показаний к сопровождению Застрахованного лица, определенных Врачом. Оплата организации и оказания услуг медицинского и/или иного сопровождения Застрахованного лица осуществляется в пределах лимитов, установленных договором страхования.
+<style isBold="true">2.	ИСКЛЮЧЕНИЯ.</style>
+<style isBold="true">Не являются страховыми случаями (не покрывается страхованием), и страховая выплата не производится по следующим событиям/заболеваниям и состояниям/расходам/услугам:</style>
+2.1.	Услуги и расходы в связи с первичным диагностированием у Застрахованного лица заболевания.
+2.2.	Услуги и расходы, связанные с событиями / случаями, прямо не указанными в договоре страхования как страховой случай.
+2.3.	Услуги и расходы, прямо не указанные в договоре страхования как услуги и расходы, подлежащие организации и оплате.
+2.4.	Услуги и расходы по заболеваниям/состояниям, указанным в договоре страхования, но возникшим до окончания периода ожидания или после истечения срока действия страхования.
+2.5.	Услуги и расходы, оказанные / понесенные до окончания периода ожидания или после истечения срока действия страхования, за исключением указанных в п. 4.1.5.2 Условий.
+2.6.	Услуги и расходы, необходимость которых возникла в связи с нарушением Застрахованным лицом рекомендаций лечащего врача и/или правил и распорядка медицинского учреждения, в котором Застрахованное лицо проходит лечение.
+2.7.	Психохирургия.
+2.8.	Хирургические операции по трансплантации органов (частей органов) или любого вида трансплантации костного мозга в следующих случаях:
+		2.8.1. если трансплантация таких органов и (или) их долей не предусмотрена договором страхования;]]></text>
+			</staticText>
+		</band>
+		<band height="772">
+			<staticText>
+				<reportElement x="-1" y="8" width="556" height="763" uuid="dc735043-d69a-40b7-adbc-fadebf31cf07">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0" tabStopWidth="25"/>
+				</textElement>
+				<text><![CDATA[	2.8.2. если потребность в трансплантации органов возникла вследствии алкогольной болезни печени;
+	2.8.3. если трансплантация органов является аутологичной (реципиент трансплантата является донором для самого себя), за исключением трансплантации костного мозга;
+	2.8.4. если при трансплантации органов Застрахованное лицо является донором по отношению к третьему лицу;
+	2.8.5. если трансплантация органов включает в себя лечение стволовыми клетками (кроме трансплантации костного мозга).
+2.9.	Медицинские и иные услуги, выполняемые в эстетических и/или косметических целях, включая, но не ограничиваясь: операции по коррекции зрения (миопии, астигматизма, близорукости); бариатрические операции, включая, но не ограничиваясь операциями, направленными на уменьшение объема желудка или кишечника, кроме операций по реконструкции груди после резекции / удаления молочной железы, проведенной в рамках договора страхования и в соответствии с его условиями.
+2.10.	Услуги и расходы в связи с родовыми травмами и/или врождёнными пороками развития.
+2.11.	Услуги, не назначенные Застрахованному лицу лечащим врачом, либо не являющиеся необходимыми с медицинской точки зрения по поводу страхового случая.
+2.12.	Услуги и расходы в связи с заболеваниями и состояниями, которые являются прямым или косвенным следствием синдрома приобретенного иммунодефицита (СПИД) или носительства вируса иммунодефицита человека (ВИЧ), включая мутацию и любое побочное действие.
+2.13.	Услуги и расходы в связи с расстройством здоровья, наступившим в местах лишения свободы, изоляторах временного содержания и других учреждениях, предназначенных для содержания лиц, подозреваемых, обвиняемых в совершении преступления или осужденных за совершенные преступления.
+2.14.	Услуги и расходы в связи с расстройством здоровья, наступившим в результате профессиональной деятельности Застрахованного лица, непосредственно связанной с химическими веществами и газами (включая асбест, растворители, бензол, хлористый винил, бериллий, никель, соединения хрома, радон, пестициды, пыль с оксидом кремния, диоксины), со взрывчатыми веществами, с ионизирующими излучениями, ультрафиолетовым излучением, с микроволновым излучением, с высоковольтными электрическими сетями.
+2.15.	Услуги и расходы в связи с применением экспериментальных методов лечения, не допущенных к использованию в Российской Федерации.
+2.16.	Услуги и расходы в связи со злокачественным новообразованием, протекающим на фоне ВИЧ–инфекции или СПИД.
+2.17.	Услуги и расходы в связи с существовавшими до даты заключения договора страхования заболеваниями и состояниями, а также несчастными случаями, диагностированными / произошедшими Застрахованному лицу / с Застрахованным лицом или о которых было известно Застрахованному лицу до даты заключения договора страхования.
+2.18.	Услуги и расходы в связи с получением Застрахованным лицом медицинских и иных услуг в медицинских и иных организациях, выбор которых не был согласован с Сервисной компанией.
+2.19.	Услуги и расходы в связи с раком кожи, за исключением меланомы.
+2.20.	Услуги и расходы в связи с Эпителиальными опухолями кожи (включая базалиому, плоскоклеточный рак) (класс С44 по МКБ-10),  Хроническим лимфоцитарным В-клеточным лейкозом (класс C91.1 по МКБ-10).
+3.	<style isBold="true">Права и обязанности Страховщика и Страхователя (Выгодоприобретателя) указаны в Условиях (раздел 12).</style>
+4.	<style isBold="true">Страховщик не заключает на условиях, содержащихся в Условиях страхования и Страховом полисе, более одного Договора страхования с одним и тем же лицом. Данное условие является существенным; оплата Страхователем Договора(-ов) страхования при наличии заключенного и не прекратившего своего действия Договора страхования не признается акцептом и такие Договоры страхования являются незаключенными ввиду несогласования Сторонами существенных условий договора. В таком случае Страховщик производит возврат поступивших денежных средств лицу, совершившему платеж в течение 20 (Двадцати) рабочих дней с момента получения письменного заявления плательщика.
+При этом Страховщик имеет право предложить заключение Договоров страхования на особых условиях.</style>
+5.	<style isBold="true">Порядок взаимодействия сторон при наступлении события, имеющего признаки страхового случая:</style>
+5.1.	<style isBold="true">Уведомление о событии, имеющего признаки страхового случая.</style>
+	5.1.1. После получения подтвержденного диагноза заболевания, указанного в п. 3.1 Условий, Страхователь должен в Период страхования, в кратчайшие сроки обратиться в Сервисную компанию с уведомлением о наступлении события, имеющего признаки страхового случая, с последующим предоставлением документов, которые запросит Сервисная компания.
+	5.1.2. Для признания события страховым случаем Сервисная компания вправе запросить оригиналы и (или) заверенные надлежащим образом копии документов:
+		5.1.2.1. Уведомление о событии, имеющим признаки страхового случая.
+		5.1.2.2. Документ, удостоверяющий личность Страхователя (для гражданина Российской Федерации – паспорт гражданина Российской Федерации; для иностранного гражданина или лица без гражданства - документ, подтверждающий право на пребывание (проживание) в Российской Федерации; для временно проживающих – разрешение на временное проживание на территории Российской Федерации; для постоянного проживающих – вид на жительство; для беженцев – удостоверение беженца; для вынужденных переселенцев - удостоверение вынужденного переселенца).
+		5.1.2.3. Договор страхования и платежный документ, подтверждающий его оплату.
+		5.1.2.4. В случае, если Страхователем производилось заключение договоров страхования в соответствии с п.6.2 Условий, - все ранее заключенные договоры страхования с платежными документами, подтверждающими их оплату.]]></text>
+			</staticText>
+		</band>
+		<band height="772">
+			<staticText>
+				<reportElement x="-1" y="8" width="556" height="763" uuid="91db4de9-5d96-4121-a3a4-2387f1997de8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0" tabStopWidth="25"/>
+				</textElement>
+				<text><![CDATA[		5.1.2.5. Согласие Застрахованного лица на обработку его персональных данных (включая, все действия, перечисленные в ст. 3 Федерального закона от 27.07.2006 №152-ФЗ «О персональных данных» (далее - Закон)), в целях надлежащего исполнения договора страхования, организации оказания услуг в отношении Страховщика, Сервисной компании, их уполномоченных представителей, а также третьих лиц, оказывающих услуги в связи с диагностированным заболеванием Застрахованного лица.
+		5.1.2.6. Согласие Застрахованного лица в соответствии с п. 3 ст. 13 Федерального закона от 21.11.2011 № 323-ФЗ «Об основах охраны здоровья граждан Российской Федерации» любому лечебному учреждению и/или врачу предоставлять ООО «РСХБ-Страхование жизни», осуществляющему страхование по договору страхования, а также Сервисной компании по договору страхования любые сведения, связанные с ним и составляющие врачебную тайну (любые медицинские документы и/или их заверенные копии, результаты лабораторных и инструментальных исследований, результаты лечения, прогноз по заболеванию и т.д.), как в связи с оценкой степени страхового риска, так и в связи с событиями, имеющими признаки страхового случая.
+		5.1.2.7. Медицинский документ (выписка из медицинской карты амбулаторного / стационарного больного, выписной эпикриз), заверенный печатью выдавшего учреждения и подписью ответственного лица, с указанием диагноза, послужившего причиной обращения за медицинской помощью в рамках настоящих Условий страхования, сроков лечения, результатов обследования и другой сопутствующей информации.
+		5.1.2.8. Результаты и заключения инструментальных, лабораторных методов диагностики / исследований, в т.ч.: гистологических или цитологических (в случае системных онкологических заболеваний); радиологических визуализирующих исследований; данные магнитно-резонансной томографии.
+		5.1.2.9. Выписка из медицинской карты амбулаторного больного, содержащая информацию об имеющихся у Застрахованного лица заболеваниях за последние 5 лет.
+		5.1.2.10. Медицинский документ из онкологического диспансера по месту жительства о наличии и дате (датах) обращений либо об отсутствии обращений.
+Указанный перечень документов и сведений является исчерпывающим. Страховщик (Сервисная компания) вправе сократить перечень документов, указанный в настоящем пункте.
+5.2.	<style isBold="true">В случае признания события страховым случаем</style> - в течение 15 (Пятнадцати) рабочих дней с момента получения Сервисной организацией полного комплекта документов по заявленному событию, Сервисная компания организует необходимые Застрахованному лицу услуги, предусмотренные страхованием, и информирует Застрахованное лицо о:
+	v	специализированных медицинских учреждениях, центрах;
+	v	рекомендованном лечащем враче – специалисте;
+	v	дальнейших действиях Застрахованного лица, необходимых для оказания услуг, предусмотренных договором страхования.
+5.3.	<style isBold="true">Если наступившее событие не признано страховым случаем</style>, Страховщик в течение 10 (десяти) рабочих дней с момента принятия решение о непризнании события страховым случаем письменно информирует об этом Застрахованное лицо.
+6.	<style isBold="true">Порядок определения и осуществления страховой выплаты, оказания медицинских услуг определен в разделе 11 Условий страхования.</style>
+7.	<style isBold="true">Порядок принятия решения по заявленному событию, имеющему признаки страхового случая:</style>
+7.1.	После представления Выгодоприобретателем (Застрахованным лицом, Страхователем), всех необходимых документов, позволяющих судить о причинах и обстоятельствах, повлекших наступление события, обладающего признаками страхового случая, и о размере страховой выплаты, Страховщик в течение 15 (пятнадцати) рабочих дней со дня представления Выгодоприобретателем (Застрахованным лицом, Страхователем) всех необходимых документов обязан принять одно из следующих решений:
+	7.1.1. <style isBold="true">О признании заявленного события страховым случаем.</style>
+В этом случае в указанный в п. 7.1. Договора страхования срок Страховщик утверждает Страховой акт и осуществляет организацию оказания медицинской и лекарственной помощи (медицинских услуг) и иных услуг.
+	7.1.2. <style isBold="true">Об отказе в страховой выплате.</style>
+В этом случае в течение 10 (десяти) рабочих дней с момента принятия решения об отказе в страховой выплате (в срок, предусмотренный п. 7.1. Договора страхования) Страхователю (Застрахованному лицу, Выгодоприобретателю) направляется письменное уведомление с мотивированным обоснованием причин отказа.
+	7.1.3. <style isBold="true">О проведении страхового расследования.</style>
+Страховщик имеет право, письменно уведомив Страхователя (Застрахованное лицо, Выгодоприобретателя), вынести мотивированное решение об отсрочке принятия решения о признании или непризнании события страховым случаем или об отказе в страховой выплате, в случаях если:
+	v	по фактам, послужившим причиной наступления страхового случая, возбуждено уголовное дело или начат судебный процесс - до окончания производства по уголовному делу или судебному процессу (до события, которое наступит ранее);
+	v	возникла необходимость в экспертизе представленных документов. Отсрочка возможна, в случае, если у Страховщика имеются мотивированные сомнения в подлинности документов, подтверждающих страховой случай;]]></text>
+			</staticText>
+		</band>
+		<band height="772">
+			<staticText>
+				<reportElement x="-1" y="8" width="556" height="763" uuid="1b4ea882-dca6-41e5-ac2a-3fa25b894001">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0" tabStopWidth="25"/>
+				</textElement>
+				<text><![CDATA[	v	полученные Страховщиком и предусмотренные договором страхования документы не подтверждают наличие страхового события, в связи с чем возникла необходимость в запросе дополнительных документов. В этом случае, Страховщик вправе запросить дополнительно документы у Страхователя (Застрахованного лица, Выгодоприобретателя) и/или компетентных органов. При этом Страховщик обязан обосновать в своем запросе необходимость предоставления ему таковых документов.
+Страховое расследование проводится в течение 30 (тридцати) рабочих дней после получения всей необходимой информации в соответствии с настоящим пунктом Условий страхования. Решение о признании или непризнании события страховым случаем или об отказе в страховой выплате принимается в течение 15 (пятнадцати) рабочих дней после завершения страхового расследования.
+8.	<style isBold="true">ОСНОВАНИЯ ОТКАЗА В СТРАХОВОЙ ВЫПЛАТЕ</style>
+8.1.	<style isBold="true">Страховщик освобождается от страховой выплаты в следующих случаях:</style>
+	8.1.1. Если страховой случай по любому страховому риску наступил вследствие умысла Страхователя, Выгодоприобретателя или Застрахованного лица.
+	8.1.2. Если страховой случай по любому страховому риску наступил вследствие:
+		8.1.2.1. Воздействия ядерного взрыва, радиации или радиоактивного заражения.
+		8.1.2.2. Военных действий, а также маневров или иных военных мероприятий.
+		8.1.2.3. Гражданской войны, народных волнений всякого рода или забастовок.
+8.2.	<style isBold="true">Страховщик отказывает в страховой выплате по следующим основаниям:</style>
+	8.2.1. Произошедшее событие не является страховым случаем, т.е. не относится к событиям, на случай наступления которых был заключен договор страхования (например, отнесено к исключениям (раздел 5 Условий страхования, раздел 2 Договора страхования) или не может быть квалифицировано в качестве страхового случая, исходя из терминов и определений, определенных Условиями страхования и Договором страхования).
+	8.2.2. Событие произошло до начала или после окончания (в т. ч. досрочного) срока дейтствия договора страхования (например, после прекращения срока действия договора страхования).
+	8.2.3. Событие произошло в период ожидания.
+	8.2.4. Сумма страховой выплаты превышает лимит ответственности (лимит страхового обязательства). При этом возможен частичный отказ в страховой выплате пропорционально превышению лимита.
+	8.2.5. Событие произошло с лицом, которое не является Застрахованным лицом по договору страхования, или событие произошло по страховому риску, который не предусмотрен в отношении Застрахованного лица.
+	8.2.6. По основаниям, предусмотренным действующим законодательством Российской Федерации (в т. ч. если Страховщик освобожден от страховой выплаты).
+9.	<style isBold="true">ДЕКЛАРАЦИЯ И СОГЛАСИЯ СТРАХОВАТЕЛЯ:</style>
+9.1.	Заключая договор страхования и оплачивая страховую премию, Страхователь подтверждает:
+	v	свое ознакомление и согласие с условиями страхования, изложенными в настоящем Страховом полисе и Условиях страхования, в частности, Страхователь подтверждает, что ознакомлен и согласен с исключениями, порядком определения размера страховой выплаты и установленными лимитами ответственности, перечнем оснований для отказа в страховой выплате, условиями досрочного прекращения договора страхования и условиями, при которых договор страхования считается незаключенным ввиду несогласования сторонами его существенных условий, и иными условиями страхования;
+	v	<style isBold="true">что до заключения</style> Страхового полиса ему была предоставлена полная информация о страховой услуге согласно Закону Российской Федерации от 07.02.1992 № 2300-1 «О защите прав потребителей», в том числе о размере страховой премии, порядке ее оплаты и последствиях ее неоплаты; о порядке установления страховой суммы; о перечне страховых случаев; об исключениях из страхования; о требованиях к Застрахованному лицу, декларируемых Страховым полисом; о порядке действий Страхователя при наступлении события, имеющего признаки страхового случая; о порядке и определении размера страховой выплаты; о фирменном наименовании и о месте нахождения Страховщика, Сервисной компании, о номерах телефонов, о режиме работы Страховщика, Сервисной компании, которая позволила ему сделать правильный выбор страховой услуги, а также о том, что он был вправе обратиться к Страховщику для согласования иного содержания отдельных условий договора страхования;
+	v	свое ознакомление, понимает и соглашается с тем, что при наступлении событий по страховым рискам, перечисленным в Страховом полисе, у Страховщика возникает обязанность осуществить организацию оказания медицинских и иных услуг в общей сложности не более страховой суммы, установленной Договором страхования.
+	v	что ознакомлен с последствиями, предусмотренными ст. 431.2 Гражданского кодекса Российской Федерации, наступающими в случае, если при заключении Страхового полиса либо до или после его заключения Страхователь дал Страховщику недостоверные заверения об обстоятельствах, имеющих значение для заключения Страхового полиса, его исполнения или прекращения (в том числе определения вероятности наступления страхового случая и размера возможных убытков от его наступления);
+	v	что обстоятельства, оговоренные в Страховом полисе, имеют существенное значение для заключения Страхового полиса, его исполнения и прекращения (в том числе определения вероятности наступления страхового случая и размера возможных убытков от его наступления);
+	v	что является гражданином Российской Федерации;]]></text>
+			</staticText>
+		</band>
+		<band height="772">
+			<staticText>
+				<reportElement x="-1" y="8" width="556" height="763" uuid="70ed7ae6-cc76-41e6-afb6-f87b40fc015b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0" tabStopWidth="25"/>
+				</textElement>
+				<text><![CDATA[	v	что не является публичным должностным лицом (в том числе иностранным публичным должностным лицом, должностным лицом публичных международных организаций, а также лицом, замещающим (занимающим) государственную должность РФ, должность члена совета директоров ЦБ РФ, должность федеральной государственной службы, назначение и освобождение от которой осуществляется Президентом РФ или Правительством РФ, должность в ЦБ РФ, государственной корпорации и иных организациях, созданных РФ на основании федеральных законов, включенную в перечни должностей, определяемые Президентом РФ), а также супругом(-ой) и /или родственником такого публичного должностного лица. В ином случае Страхователь обязуется представить подтверждающие вышеназванные данные документы и /или сведения (в т. ч. об адресе работодателя, степени родства либо статусе по отношению к публичному должностному лицу (с учетом того, что применимо);
+	v	не имеет регистрации, места жительства /нахождения, счета в банке, зарегистрированном в государстве (на территории), которое(-ая) не выполняет рекомендации ФАТФ. Страхователь не является субъектом санкций Управления по контролю за иностранными активами Министерства финансов США и Европейского Союза;
+	v	бенефициарным владельцем (физическим лицом, которое имеет возможность контроли¬ровать действия клиента) является Страхователь; целью установления Страхователем деловых отношений со Страховщиком является получение страховой услуги;
+	v	вся информация (в т. ч. указанная в настоящем разделе Договора страхования) является полной, достоверной и действительной на дату предъявления предоставленных им сведений, а также подтверждает обязанность в случае изменений идентификционных сведений сообщить об этих изменениях Страховщику в течении 5 рабочих дней с момента их изменения ;
+	v	подтверждает, что Условия ему вручены, разъяснены и понятны, с условиями страхования он согласен;
+	v	подтверждает, что не имеет Страхового полиса «Выбери здоровье» и / или «Выбери здоровье Плюс» ООО «РСХБ-Страхование жизни», срок действия которого (которых) полностью или частично совпадает (совпадают) со сроком действия настоящего Страхового полиса;
+	v	подтверждает, что источниками происхождения средств, вносимых в качестве страховой премии, являются личные накопления и/или кредитные средства.
+9.2.	Заключая договор страхования и оплачивая страховую премию, Страхователь дает согласие:
+	v	Страховщику, а также Madanes Advanced Healthcare Services Ltd и/или их уполномоченным представителям на обработку персональных данных, в соответствии с положениями настоящего Страхового полиса и Условий страхования, Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных» (далее – Закон) в целях надлежащего исполнения договора страхования, организации оказания услуг, включения персональных данных в информационную систему персональных данных для информирования о новинках страховых продуктов, участия в маркетинговых, рекламных акциях и исследованиях, а также для осуществления информационного сопровождения исполнения договора страхования, в том числе посредством направления уведомлений с применением СМС-сообщений, посредством электронной почты и иными доступными способами. Страхователь дает согласие поручить обработку его персональных данных третьим лицам на основании заключенных Стра¬ховщиком с этими лицами договоров /соглашений (агентских, возмездного оказания услуг, о взаимном сотрудничестве, хранении, обеспечении конфиденциальности и безопасности и др.) в целях предоставления страховой услуги (далее — Обработчики). Страхователь дает согласие на передачу (предоставление) персональных данных Обработчикам, а также иным третьим лицам, круг которых ограничен и определен опосредованно как лица, с которыми Страховщик вправе взаимодействовать в связи с исполнением Договора страхования (в т. ч. при рассмо¬трении страхового события);
+	v	на предоставление Страховщику и Madanes Advanced Healthcare Services Ltd любой информации /сведений /документов (в т. ч. данных о состоянии здоровья, составляющие врачебную тайну), связанных с оказанием страховой услуги, государственными органами, федеральными государственными учреждениями МСЭ и Фондом ОМС, медицинскими и иными учреждениями (организациями, государственными органами), в том числе: любые медицинские документы и/или их заверенные копии (результаты лабораторных и инструментальных исследований, результаты лечения, прогноз по заболеванию и т.д.), как в связи с оценкой степени страхового риска, так и в связи с событиями, имеющими признаки страхового случая. Данное согласие имеет силу и действует с даты заключения Страхового полиса до истечения 6 (шести) лет после прекращения обязательств по Страховому полису;
+	v	на использование его персональных данных в целях продвижения Страховщиком своих услуг на рынке путем осуществления прямых контактов с помощью средств связи, а также для осуществления информационного сопровождения в связи с оказанием страховой услуги (в т. ч. для СМС-рассылок).
+	v	дает свое согласие на использование Страховщиком факсимильного воспроизведения подписи и печати Страховщика на Страховом полисе с помощью средств механического или иного копирования, электронно-цифровой подписи либо иного аналога собственноручной подписи.
+<style isUnderline="true">Перечень действий с персональными данными и общее описание способов их обработки</style>: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача (предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных; пер¬сональные данные будут обрабатываться с использованием различных сочетаний средств автоматизации и неавтоматизированных средств обработки (смешанная обработка). Перечень обрабатываемых персональных данных: фамилия, имя, отчество, дата и место рождения, гражданство, реквизиты документа, удостоверяющего личность (серия, номер, кем и когда выдан, код подразделения и др.), ИНН (при наличии), контактная информация (адрес места жительства, фактический адрес и др.), платежные реквизиты, иные персональные данные, содержащиеся в документах, которые были оформлены при]]></text>
+			</staticText>
+		</band>
+		<band height="772">
+			<staticText>
+				<reportElement x="-1" y="8" width="556" height="763" uuid="41a139b1-2a14-4faa-b031-01bceef5198e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0" tabStopWidth="25"/>
+				</textElement>
+				<text><![CDATA[заключении Договора страхования или переданы /будут переданы Страховщику в связи с оказанием страховой услуги, будут получены в ходе рассмотрения страхового события и /или сообщены Страховщику устно. Согласие действует в течение срока действия Договора стра-хования и еще шесть лет после его прекращения. Согласие может быть отозвано посредством направления письменного уведомления Страховщику.
+9.3.	Страхователь обязуется предоставить Страховщику и Madanes Advanced Healthcare Services Ltd любую медицинскую информацию: об обращениях за медицинской помощью, состоянии его здоровья и диагнозе, иные сведения, полученные при медицинском обследовании и лечении. Страхователь дает свое согласие на предоставление Страховщику любыми лечебно-профилактическими или особого типа учрежде¬ниями здравоохранения и /или частными врачами, у которых Страхователь проходил лечение, находится или находился под наблюдением, сведений о факте обращения Страхователя за оказанием медицинской помощи, состоянии его здоровья и диагнозе, иные сведения, получен¬ные при медицинском обследовании и лечении. Страхователь уполномочивает Страховщика и Madanes Advanced Healthcare Services Ltd на получение сведений, составляющих врачебную тайну, в любом виде и в любой форме (в т. ч. на получение справок, актов, заключений, результатов обследования). Страхователь дает свое согласие на предоставление Страховщику любыми лечебно-профилактическими или особого типа учреждениями здравоохранения и /или частными врачами, у которых Страхователь проходил лечение, находится или находился под наблюдением, сведений о факте обращения Страхователя за оказанием медицинской помощи, состоянии его здоровья и диагнозе, иные сведения, полученные при медицинском обследовании и лечении. Страхователь уполномо¬чивает Страховщика и Madanes Advanced Healthcare Services Ltd на получение сведений, составляющих врачебную тайну, в любом виде и в любой форме (в т. ч. на получение справок, актов, заключений, результатов обследования).
+9.4.	<style isBold="true">Заключая договор страхования и оплачивая страховую премию Страхователь подтверждает, что:</style>
+	v	возраст Страхователя на дату акцепта настоящего Страхового полиса не менее 18 (восемнадцати) и не более 64 (шестидесяти четырех) лет;
+	v	Страхователь является дееспособным физическим лицом;
+	v	Страхователь не является инвалидом I или II группы, ребенком-инвалидом, не имеет направление на медико-социальную экспертизу для установления инвалидности;
+	v	Страхователь, не нуждается в постоянном уходе в соответствии с медицинским заключением;
+	v	Страхователь не имеет заболевания и(или) функциональные нарушения из нижеуказанных (по которым в течение жизни устанавливался диагноз, проводилось и(или) проводится лечение, либо в отношении которых лицо находилось (находится) под наблюдением врача-специалиста): СПИД или ВИЧ-инфекция; злокачественные новообразования, в том числе рак «in situ»; лейкоз; болезнь Ходжкина; доброкачественная или злокачественная опухоль головного мозга; пищевод Барретта; дисплазия шейки матки; язва желудка; болезнь Крона; неспецифический язвенный колит; сахарный диабет; туберкулез; цирроз печени, алкогольная болезнь печени; гепатит B, C, D; аутоиммунные заболевания (ревматизм, системная красная волчанка, болезнь Вагнера, склеродермия); хроническая дыхательная недостаточность II- III степени; хроническая обструктивная болезнь легких (ХОБЛ); первичный иммунодефицит; доброкачественная гиперплазия предстательной железы; полицитемия; крипторхизм; синдром Дауна; хронический панкреатит;	амилоидоз; дилатационная кардиомиопатия; перенесенный в прошлом инфаркт миокарда; ишемическая болезнь сердца; врожденные пороки сердца;
+	v	Страхователь не	имеет психических (нервных) заболеваний и/или расстройства; не состоит на учете в наркологических и/или психоневрологических диспансерах;
+	v	Страхователь не переносил хирургические операции: по трансплантации органа или его части (в том числе, но не ограничиваясь, костного мозга), на клапанах сердца, трепанации черепа;
+	v	у Страхователя за 6 месяцев, предшествующих заключению договора страхования, не отмечалась нецеленаправленная резкая потеря веса (10 кг и более), в случае если у данного лица индекс массы тела (отношение массы тела (кг) к квадрату роста (м)) находится в диапазоне менее 20 или более 35; а также у данного лица отмечалась патологическая кровопотеря из любых источников;
+	v	 Страхователь не имеет отклонений от установленных лабораторных норм показателей онкомаркеров (если такие исследования проводились);
+	v	 Страхователь не подвергался (подвергается) воздействию радиации, токсических или канцерогенных веществ при выполнении своих профессиональных обязанностей;
+	v	Страхователь не выкуривает более 20 сигарет в день и/ или не курит ежедневно электронные сигареты, сигары, трубки, кальян/наргиле, или другие никотиновые заменители; не употребляет алкоголь более чем 5 единиц в день (одна единица = 300 мл пива или 100 мл вина или 20 мл спирта);
+	v	 Страхователь и/или его ближайшие родственники (отец, мать, братья, сестры) в возрасте до 60 лет не болели онкологическими заболеваниями и / или не умирали от рака (в случае, если этот факт был известен Страхователю до заключения договора страхования).
+10.	<style isBold="true">ЗАКЛЮЧИТЕЛЬНЫЕ ПОЛОЖЕНИЯ</style>
+10.1.	К Страховому полису прилагаются и являются неотъемлемой частью Договора страхования Условия страхования «Выбери здоровье».
+10.2.	В случае спорных ситуаций положения настоящего Страхового полиса имеют приоритетную силу по отношению к Условиям страхования. Во всем, что не предусмотрено положениями настоящего Страхового полиса, стороны руководствуются Условиями страхования.]]></text>
+			</staticText>
+		</band>
+		<band height="324">
+			<staticText>
+				<reportElement x="-1" y="8" width="556" height="92" uuid="58e370b8-3ac0-4a69-9da7-0179cc6aefee">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0" tabStopWidth="25"/>
+				</textElement>
+				<text><![CDATA[10.3.	Никакие отметки (а также дополнения, исправления и т. п.), сделанные на Договоре страхо¬вания (Страховой полис и приложения к нему) от руки, не имеют юридической силы, если их верность не засвидетельствована собственноручными подписями Сторон и оригинальным оттиском печати Страховщика.
+10.4.	Заключая Договор страхования, Страхователь подтверждает, что Страховой полис и Условия страхования «Выбери здоровье», утвержденные приказом генерального директора Страховщика от «_______»________2018г. №__________, Страхователем приняты. Условия страхования вручены Страхователю и получены им.
+<style isBold="true">ПРИЛОЖЕНИЕ:</style> Условия страхования «Выбери здоровье».]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="110" width="271" height="13" backcolor="#C0C0C0" uuid="4b639882-5f80-4a67-966a-1de378b6bdc2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Open Sans" size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[СТРАХОВЩИК]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="123" width="307" height="59" uuid="e809d404-5816-418c-8c42-38406354bf46">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Open Sans" size="9" isBold="false"/>
+					<paragraph leftIndent="6" rightIndent="0" tabStopWidth="25"/>
+				</textElement>
+				<text><![CDATA[Генеральный директор ООО «РСХБ-Страхование жизни»
+__________________________________ / Мальков Максим Владимирович/
+Аналог собственноручной подписи и печати
+м.п.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30">
+			<textField>
+				<reportElement x="455" y="8" width="100" height="14" uuid="74c80864-705d-4d1a-8ce2-052e98e8d9bd"/>
+				<textElement textAlignment="Right">
+					<font fontName="Open Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

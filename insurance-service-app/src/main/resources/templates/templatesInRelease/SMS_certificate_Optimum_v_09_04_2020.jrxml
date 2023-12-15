@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RshbInsuranceChooseHealth" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset2" uuid="e28d5171-aacc-4070-9f21-d4f8f7ac48b1">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="FIO" class="java.lang.String"/>
+		<field name="birthDateAndBirthPlaceAndBirthCountry" class="java.lang.String"/>
+		<field name="address" class="java.lang.String"/>
+		<field name="taxResidence" class="java.lang.String"/>
+		<field name="riskName" class="java.lang.String"/>
+		<field name="share" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="Dataset3" uuid="e28d5171-aacc-4070-9f21-d4f8f7ac48b2">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="periodNumber" class="java.lang.String"/>
+		<field name="startPeriod" class="java.lang.String"/>
+		<field name="endPeriod" class="java.lang.String"/>
+		<field name="redemptionAmount" class="java.lang.String"/>
+		<field name="redemptionCurrency" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="RedemptionSubreportDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="RecipientSubreportDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="RiskSubreportDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="companyLogo" class="java.lang.Boolean"/>
+	<parameter name="sign" class="java.lang.Boolean"/>
+	<parameter name="stamp" class="java.lang.Boolean"/>
+	<parameter name="contractEndDate" class="java.lang.String"/>
+	<parameter name="contractConclusionDate" class="java.lang.String"/>
+	<parameter name="contractNumber" class="java.lang.String"/>
+	<parameter name="contractCurrency" class="java.lang.String"/>
+	<parameter name="currencyForGrids" class="java.lang.String"/>
+	<parameter name="contractSignDate" class="java.lang.String"/>
+	<parameter name="rentPayStartDate" class="java.lang.String"/>
+	<parameter name="rentPayEndDate" class="java.lang.String"/>
+	<parameter name="rentContractEndDate" class="java.lang.String"/>
+	<parameter name="cumulativePeriodStart" class="java.lang.String"/>
+	<parameter name="cumulativePeriodEnd" class="java.lang.String"/>
+	<parameter name="contractStartDate" class="java.lang.String"/>
+	<parameter name="contractAmount" class="java.lang.String"/>
+	<parameter name="contractPremium" class="java.lang.String"/>
+	<parameter name="contractPremiumString" class="java.lang.String"/>
+	<parameter name="contractAmountString" class="java.lang.String"/>
+	<parameter name="coolingPeriodString" class="java.lang.String"/>
+	<parameter name="insuredAddress" class="java.lang.String"/>
+	<parameter name="insuredBirthDate" class="java.lang.String"/>
+	<parameter name="monthlyRentAmount" class="java.lang.String"/>
+	<parameter name="monthlyRentAmountString" class="java.lang.String"/>
+	<parameter name="insuranceTariff" class="java.lang.String"/>
+	<parameter name="paysDateString" class="java.lang.String"/>
+	<parameter name="payTermString" class="java.lang.String"/>
+	<parameter name="periodicity" class="java.lang.String"/>
+	<parameter name="policyHolderSNILS" class="java.lang.String"/>
+	<parameter name="programKindName" class="java.lang.String"/>
+	<parameter name="rentAmount" class="java.lang.String"/>
+	<parameter name="rentAmountString" class="java.lang.String"/>
+	<parameter name="rentPayAmount" class="java.lang.String"/>
+	<parameter name="rentPayDay" class="java.lang.String"/>
+	<parameter name="rentPayMonthYear" class="java.lang.String"/>
+	<parameter name="rentPayPeriodStartDate" class="java.lang.String"/>
+	<parameter name="rentPeriodEndDate" class="java.lang.String"/>
+	<parameter name="rentPeriodStartDate" class="java.lang.String"/>
+	<parameter name="rentTermYear" class="java.lang.String"/>
+	<parameter name="tariff" class="java.lang.String"/>
+	<parameter name="shortProgramName" class="java.lang.String"/>
+	<parameter name="insuranceDurationCountString" class="java.lang.String"/>
+	<parameter name="isTestInstance" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[Флаг, определяющий, что инстанс приложения запущен на тестовом стенде]]></parameterDescription>
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="785">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="77" width="555" height="19" uuid="d2753c2b-ca95-4c59-9d56-7c44d608dd60">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[СЕРТИФИКАТ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" mode="Opaque" x="100" y="99" width="360" height="70" backcolor="#C0C0C0" uuid="2fd0607c-77e2-4261-ad6a-ae60ade1b808">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+					<paragraph leftIndent="6" rightIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Идентификационный номер сертификата: " +  $P{contractNumber}  +
+"\nПрограмма: Медсоветник" +
+"\nТариф: " + $P{shortProgramName} +
+"\nДата выдачи сертификата: " +  $P{contractConclusionDate} +" г."+
+"\nСрок действия -  " + $P{insuranceDurationCountString}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="40" y="206" width="470" height="19" uuid="b01ed97c-826c-49fb-a945-288271954ae5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Уважаемый клиент!]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="40" y="232" width="470" height="70" uuid="37e07869-bcfc-4618-a599-5998eee595c8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ООО «СМС» поздравляет Вас с покупкой программы «Медсоветник». Данный Сертификат дает вам право на пользование сервисом дистанционных консультаций в режиме  24/7.
+Медсоветник – это ваш личный навигатор в медицинском мире.
+Наша задача – предоставить Вам качественный и эффективный сервис!]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="40" y="331" width="470" height="19" uuid="479f82fc-fedf-4ec1-a00f-41204a82ad5b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Как начать пользоваться сервисом «Медсоветник»:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="40" y="350" width="468" height="320" uuid="6acd76ca-38b5-4b0a-b2ab-988f408c227a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[1. Скачайте мобильное приложение «Медсоветник» в Appstore/Google play или зайдите на сайт www.medsovetnik.online. Вы так же можете активировать Сертификат, обратившись по номеру 8 (800) 600-45-99.
+2. При регистрации на сайте www.medsovetnik.online или в мобильном приложении «Медсоветник» укажите номер мобильного телефона и электронную почту (необязательно). Внимательно прочтите правила пользования Сертификатом, пользовательское соглашение, иные сопутствующие документы и примите их условия, посредством проставления отметок (галочек)!
+3. Создайте личный пароль для входа во время регистрации в личном кабинете.        
+4. Для завершения регистрации введите код подтверждения, который придет на указанный номер телефона в виде СМС-сообщения.
+5. В личном кабинете на сайте или в приложении вы увидите поле для активации номера Сертификата. Введите идентификационный номер сертификата (указан вверху данного Сертификата) и подтвердите ввод. Проверка данных занимает не более 24 часов, мы обязательно уведомим вас письмом или СМС-сообщением на телефон о том, что услуги по вашему Сертификату активны!]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="42" y="700" width="470" height="76" uuid="56607371-0fbf-4e4b-8e21-9720059e1d60">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true">Услуги оказываются ООО «СМС»
+Для корреспонденции: 101000, г. Москва, ул. Мясницкая, д.26 а/я 676</style> 
+ИНН 5003085636  ОГРН 1095003000256
+Тел.: +7 (495) 797-79-33, E-mail: contact@smedservice.ru
+]]></text>
+			</staticText>
+			<image>
+				<reportElement positionType="Float" x="2" y="0" width="160" height="90" uuid="f27d6b8b-aa23-4267-8311-3d521a47054a">
+					<printWhenExpression><![CDATA[$P{companyLogo}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["templates/sms-logo.png"]]></imageExpression>
+			</image>
+		</band>
+		<band height="755">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="10" width="535" height="19" uuid="4953691e-4c18-4110-9821-d0e6ecdf123e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Опции программы «Медсоветник»]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="29" width="240" height="26" forecolor="#C00101" uuid="52ed8637-a8ce-422d-a48d-5e3489fb1d8f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Доступные сервисы]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="29" width="295" height="13" uuid="2e4dad68-9837-45ab-ab13-8203598f1664">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Тарифы]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="42" width="110" height="13" forecolor="#C00101" uuid="ca88ce94-9959-4246-aa03-b16f21f688bf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Демо-версия]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="42" width="90" height="13" forecolor="#C00101" uuid="a0999aef-1702-43e3-846b-202a242b02d0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Оптимум]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="42" width="95" height="13" forecolor="#C00101" uuid="f8237923-3a85-4709-b456-0cd89e67dfa1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Максимальный]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="10" y="55" width="535" height="15" forecolor="#C00101" backcolor="#C0C0C0" uuid="5e7e4c69-4702-41b0-80a8-56075bf8ba92">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1. Блок "Здоровье":]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="70" width="240" height="30" uuid="caa96401-fa0a-4ef6-802e-b3bb38864f41">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Дистанционные консультации дежурным врачом-терапевтом]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="70" width="110" height="30" uuid="c0f6a5c2-61ed-4317-a398-fa05375ba4f4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4 обращения]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="70" width="90" height="30" uuid="8017ceb6-d29f-409a-ae99-ed8d75a2ec83">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Без ограничений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="70" width="95" height="30" uuid="25fed9f2-e5b0-45a0-923e-bd974b952176">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Без ограничений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="10" y="100" width="535" height="15" forecolor="#C00101" backcolor="#C0C0C0" uuid="170cfa44-ce50-4df0-995a-ad2f1c5180f9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2. Блок "Узкие специалисты":]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="115" width="240" height="34" uuid="657de1d9-9eb1-48e6-a39e-fac9ecaa9e38">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Дистанционное консультирование с профильным специалистом по предварительной записи]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="115" width="110" height="34" uuid="f133c90c-ca5f-4959-becd-c3d66a52ccd0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 обращение]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="115" width="90" height="34" uuid="b4599d50-6344-47fb-92a6-921d76fe59fd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[6 обращений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="115" width="95" height="34" uuid="21644067-633f-4b23-bf32-60859366ba4d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[12 обращений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="10" y="149" width="535" height="15" forecolor="#C00101" backcolor="#C0C0C0" uuid="a758cbc6-034a-4724-8b03-df9ae207b65d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3. Специальные блок:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="283" width="240" height="31" uuid="ab821ebb-483c-4d6a-a450-8a7921d419b9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Получение справочной информации по различным вопросам]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="283" width="110" height="31" uuid="324efbea-132d-4083-ab4c-75c63139d3c6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Без ограничений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="283" width="90" height="31" uuid="1dd17a22-8179-47c6-a71e-0ececd5e913c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Без ограничений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="283" width="95" height="31" uuid="fe0f38ca-9a12-4aad-897b-83d48b0d6d04">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Без ограничений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="10" y="268" width="535" height="15" forecolor="#C00101" backcolor="#C0C0C0" uuid="46267743-3628-46de-a267-b6810c8c2626">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4. Справочный блок:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="10" y="314" width="240" height="15" backcolor="#C0C0C0" uuid="2b862dfd-7ade-4e98-bf97-fae736fc6ddf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Срок действия]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="10" y="329" width="240" height="15" backcolor="#C0C0C0" uuid="f8ef16d7-1521-4436-b33c-9fb3b9c1d401">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Стоимость (с НДС), руб]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="329" width="110" height="15" uuid="96cfea2a-8aa6-4254-ad9a-8ffce07cc29c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 000]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="314" width="110" height="15" uuid="9a128c12-854d-45b3-8ac7-66e41550a190">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3 месяца]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="314" width="90" height="15" uuid="a72b053c-65e1-4d7e-afdd-e280c2312890">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[12 месяцев]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="329" width="90" height="15" uuid="89d543ca-affa-4f5e-8da0-0e686ab6d106">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[5 000]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="329" width="95" height="15" uuid="30c64dc4-48e4-4b9b-a66d-3e269d74e272">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[10 000]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="314" width="95" height="15" uuid="413484c3-f081-4a99-8f00-2f985a73ac1a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[12 месяцев]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="361" width="535" height="14" uuid="4a57e8e5-0c9d-4b32-b8f1-db68821562dc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Основные условия предоставления услуг по Сертификату]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="383" width="262" height="345" uuid="f489a9bd-f363-4f11-8337-a5fa3b9686ea">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[1. Данный Сертификат является соглашением, по которому ООО «СМС» обязуется осуществлять, при условии безоговорочного принятия Клиентом (Пользователем) Правил пользования Сертификатом, медицинские консультации (письменные или устные) с применением телемедицинских технологий без постановки диагноза и организацию медицинских и иных услуг в пределах установленного Сертификатом количества. 
+2. Правила пользования Сертификатом - публичная  оферта, размещенная на сайте https://medsovetnik.online/, содержит все существенные условия соглашения (Сертификата) и порядок пользования услугами. Полным и безоговорочным принятием (акцептом) условий публичной оферты считается осуществление Клиентом оплаты за предоставляемые в рамках сертификата услуги. 
+3. Услуги оказываются физическому лицу, достигшему возраста 15 лет (Клиенту/Пользователю), зарегистрированному и активировавшему настоящий Сертификат в личном кабинете на сайте https://medsovetnik.online/.
+4. Активация Сертификата должна быть осуществлена в течение 30 календарных дней со дня оплаты. Если Клиент не активировал Сертификат по собственной инициативе, по истечении периода активации Сертификат активируется автоматически. После активации Пользователю в течение одного года доступны все услуги, включенные в тариф.
+5. Пользователю/Клиенту предоставляются медицинские консультации с применением телемедицинских технологий без постановки диагноза (телемедицинские консультации)  в строгом соответствии со ст. 36.2 Федерального закона от 21.11.2011 № 323-ФЗ «Об основах охраны здоровья граждан в Российской Федерации», а также Приказом Минздрава России от 30.11.2017 № 965н «Об утверждении порядка организации и оказания медицинской помощи с применением телемедицинских технологий», при этом не рассматриваются: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="290" y="383" width="254" height="345" uuid="33186b08-d506-422a-bad0-f3e9b31920da">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="styled">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[1) вопросы, по которым Врач не сможет сформировать свое профессиональное мнение ввиду дистанционного характера взаимодействия с Пользователем и невозможности произвести очный визуальный осмотр и прочие манипуляции; 2) вопросы, для изучения которых необходимо получение дополнительной информации (результатов осмотров, анализов и пр.), при их отсутствии. По итогам оказания услуги составляется письменное заключение (протокол телемедицинской консультации) для Пользователя. Письменное заключение не содержит в своем тексте диагноз Пользователя и носит исключительно рекомендательный характер.
+6. Информированное добровольное согласие на проведение телемедицинской консультации осуществляется Пользователем (или его законным представителем) после ознакомления с его текстом, размещенным на сайте http://medsovetnik.online посредством проставления отметок (галочек). 
+7. В момент акцепта настоящего Договора Клиент ознакомлен и согласен с тем, что консультация (телемедицинская услуга) по настоящему Договору носит исключительно рекомендательный характер (без постановки диагноза).
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="164" width="240" height="16" uuid="45c988e0-973b-4da2-afae-8205c96fc6a9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Второе мнение]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="164" width="110" height="16" uuid="86029ec5-8405-4397-b1ba-8309544b93de">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="164" width="90" height="16" uuid="5fc3c7ec-e347-4515-a357-73a762b2e142">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 раз]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="164" width="95" height="16" uuid="eb55a69b-38a8-4a3a-8e29-1e7e3c470704">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2 раза]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="180" width="240" height="16" uuid="521b6219-6465-4785-9536-e3a6e6f2cdfb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Организация платной медицинской помощи]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="180" width="110" height="16" uuid="9872659d-54ce-4e26-a584-110161634ac3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="180" width="90" height="16" uuid="629091c4-b0a4-43f1-b276-6b17371859ad">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 раз]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="180" width="95" height="16" uuid="158190ec-33de-4348-b4e0-a05bb66c5ab2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 раз]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="196" width="240" height="24" uuid="196002b8-d8c6-4f0d-a79c-4ce7cd9e40ae">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Подключение второго члена семьи (старше 15 лет)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="196" width="110" height="24" uuid="2f0dcb4d-9542-4398-a486-d6571123856a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="196" width="90" height="24" uuid="52306dbe-44e8-487c-943a-7db24b7eed07">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Включено]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="196" width="95" height="24" uuid="cba60f7d-853c-4cd9-9fb4-f29a3227fae6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Включено]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="220" width="240" height="24" uuid="80dfd04b-8527-467c-91e0-541becf13887">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Звонок "Забота"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="220" width="110" height="24" uuid="281f2a72-bcfe-49c2-a949-c3e3664d693c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="220" width="90" height="24" uuid="7470fe2a-95ba-4b96-b31a-fc9804991c40">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 звонок в месяц]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="220" width="95" height="24" uuid="ca991762-64fd-4e45-80ee-d3183eba9bda">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1 звонок в месяц]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="244" width="240" height="24" uuid="8be0a3b9-5c4e-4a1f-b585-91ce4942b772">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Психологическая поддержка]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="250" y="244" width="110" height="24" uuid="e02b5adf-c292-4a09-bcc5-0cad8e057e2b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="244" width="90" height="24" uuid="e224ed98-dfa3-4cf2-aec4-2bcc5a8b936b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Без ограничений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="450" y="244" width="95" height="24" uuid="772a1a0d-f582-4fcb-998e-a06713d29116">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Без ограничений]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17"/>
+	</pageFooter>
+</jasperReport>

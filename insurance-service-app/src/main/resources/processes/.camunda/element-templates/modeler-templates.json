@@ -1,0 +1,132 @@
+[
+  {
+    "id": "start-process-template",
+    "name": "Старт процесса",
+    "appliesTo": [
+      "bpmn:StartEvent"
+    ],
+    "properties": [
+      {
+        "label": "Обработчик старта процесса",
+        "type": "String",
+        "binding": {
+          "type": "camunda:property",
+          "name": "bpm-action-request-adapter-class"
+        }
+      },
+      {
+        "label": "Необходимые права для старта процесса",
+        "type": "String",
+        "binding": {
+          "type": "camunda:property",
+          "name": "bpm-permission-operation-name"
+        }
+      }
+    ]
+  },
+  {
+    "id": "start-subprocess-template",
+    "name": "Старт подпроцесса",
+    "appliesTo": [
+      "bpmn:StartEvent"
+    ],
+    "properties": [
+      {
+        "label": "Признак подпроцесса",
+        "type": "Hidden",
+        "value": true,
+        "binding": {
+          "type": "camunda:property",
+          "name": "is-subprocess"
+        }
+      },
+      {
+        "label": "Необходимые права для старта подпроцесса",
+        "type": "String",
+        "binding": {
+          "type": "camunda:property",
+          "name": "bpm-permission-operation-name"
+        }
+      }
+    ]
+  },
+  {
+    "id": "user-task-template",
+    "name": "Пользовательская задача",
+    "appliesTo": [
+      "bpmn:UserTask"
+    ],
+    "isDefault": true,
+    "properties": [
+      {
+        "label": "Обработчик завершения задачи",
+        "type": "String",
+        "binding": {
+          "type": "camunda:property",
+          "name": "bpm-action-request-adapter-class"
+        }
+      },
+      {
+        "label": "Необходимые права для задачи",
+        "type": "String",
+        "binding": {
+          "type": "camunda:property",
+          "name": "bpm-permission-operation-name"
+        }
+      },
+      {
+        "label": "Запрещено выполнять задачу инициатору процесса",
+        "type": "Boolean",
+        "binding": {
+          "type": "camunda:property",
+          "name": "forbidden-execute-initiator-process"
+        }
+      },
+      {
+        "label": "После завершения этой задачи процесс возвращается на инициатора",
+        "type": "Boolean",
+        "binding": {
+          "type": "camunda:property",
+          "name": "change-owner-to-initiator-process"
+        }
+      }
+    ]
+  },
+  {
+    "id": "call-activity-template",
+    "name": "Вызов подпроцесса",
+    "appliesTo": [
+      "bpmn:CallActivity"
+    ],
+    "isDefault": true,
+    "properties": [
+      {
+        "label": "Ключ подпроцесса",
+        "type": "String",
+        "binding": {
+          "type": "property",
+          "name": "calledElement"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Идентификатор сервиса",
+        "type": "String",
+        "binding": {
+          "type": "camunda:property",
+          "name": "service-name"
+        }
+      },
+      {
+        "label": "Класс маппинга переменных",
+        "type": "String",
+        "binding": {
+          "type": "property",
+          "name": "camunda:variableMappingClass"
+        }
+      }
+    ]
+  }
+]
