@@ -279,13 +279,20 @@ public class InsuranceConverter {
             insurance.setDuration(model.getDuration());
             insurance.setEndDate(calculateEndDate(insurance));
 
+
+            //Сохранение выбранного типа расчета
+            if (model.getType() != null) {
+                insurance.setCalcBySum(model.getType() == FindProgramType.SUM);
+            }
+
             InsuranceCalculationInfo insuranceCalculationInfo = buildInsuranceCalculationInfo(model, programSetting);
             insuranceCalculationInfo = buildInsuranceCalculationDiscount(insurance, programSetting, insuranceCalculationInfo);
 
             BigDecimal totalPremium = insuranceCalculationInfo.getTotalPremium();
             int periodCount = calculationService.periodCount(CalendarUnitEnum.valueOf(model.getCalendarUnit().name()),
                     model.getDuration(), programSetting.getPeriodicity());
-
+            insurance.setAmount(insuranceCalculationInfo.getInsuranceAmount());
+            insurance.setPremium(insuranceCalculationInfo.getPremiumPerPeriod());
             insurance.setCurrency(model.getCurrencyId());
             insurance.setDuration(model.getDuration());
             if (!isRubCurrency && exchangeRate != null) {
@@ -356,11 +363,6 @@ public class InsuranceConverter {
         //Обновляем список выгодоприобретателей
         updateRecipientList(model.getRecipientList(), insurance);
 
-        //Сохранение выбранного типа расчета
-        if (model.getType() != null) {
-            insurance.setCalcBySum(model.getType() == FindProgramType.SUM);
-        }
-
         if (model.getUuid() != null) {
             insurance.setUuid(model.getUuid());
         }
@@ -419,8 +421,6 @@ public class InsuranceConverter {
                     ? calcAmountWithDiscount(insuranceCalculationInfo.getInsuranceAmount(), discount)
                     : insuranceCalculationInfo.getInsuranceAmount();
 
-            insurance.setAmount(insuranceAmount);
-            insurance.setPremium(insuranceCalculationInfo.getPremiumPerPeriod());
             insurance.setPremiumWithoutDiscount(insuranceCalculationInfo.getInsuranceAmount());
             return new InsuranceCalculationInfo(
                     insuranceAmount,
@@ -434,8 +434,6 @@ public class InsuranceConverter {
                     ? calcAmountWithDiscount(insuranceCalculationInfo.getTotalPremium(), discount)
                     : insuranceCalculationInfo.getTotalPremium();
 
-            insurance.setAmount(insuranceCalculationInfo.getInsuranceAmount());
-            insurance.setPremium(premiumPerPeriod);
             insurance.setPremiumWithoutDiscount(insuranceCalculationInfo.getPremiumPerPeriod());
             return new InsuranceCalculationInfo(
                     insuranceCalculationInfo.getInsuranceAmount(),
