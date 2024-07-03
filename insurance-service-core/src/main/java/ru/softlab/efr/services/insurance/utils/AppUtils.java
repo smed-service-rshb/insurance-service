@@ -2,7 +2,7 @@ package ru.softlab.efr.services.insurance.utils;
 
 import com.ibm.icu.text.RuleBasedNumberFormat;
 import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
@@ -10,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import ru.softlab.efr.services.insurance.exception.ImportInsuranceException;
 import ru.softlab.efr.services.insurance.exception.ValidationException;
+import ru.softlab.efr.services.insurance.model.db.ClientEntity;
 import ru.softlab.efr.services.insurance.model.reportable.ReportableContract;
 import ru.softlab.efr.services.insurance.model.rest.CheckModel;
 import ru.softlab.efr.services.insurance.model.rest.CheckModelErrorType;
@@ -356,6 +357,24 @@ public class AppUtils {
         }
         DecimalFormat formatter = getDecimalFormat();
         return formatter.format(digit);
+    }
+
+    /**
+     * Сформировать ФИО клиента
+     *
+     * @param client данные клиента
+     * @return ФИО клиента
+     */
+    public static String getFullName(ClientEntity client) {
+        if (client == null) {
+            return StringUtils.EMPTY;
+        }
+
+        return String.join(StringUtils.SPACE,
+                StringUtils.defaultString(client.getSurName()),
+                StringUtils.defaultString(client.getFirstName()),
+                StringUtils.defaultString(client.getMiddleName()))
+                .trim();
     }
 
     private static DecimalFormat getDecimalFormat() {
