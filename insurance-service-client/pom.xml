@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>smedservice-insurance-service</artifactId>
-        <groupId>ru.softlab.efr.services</groupId>
-        <version>0.0.2-SNAPSHOT</version>
+        <artifactId>insurance-service</artifactId>
+        <groupId>ru.softlab.insurance.sms.services</groupId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>smedservice-insurance-service-client</artifactId>
+    <artifactId>insurance-service-client</artifactId>
     <dependencies>
         <dependency>
             <groupId>ru.softlab.efr.infrastructure</groupId>
@@ -22,9 +22,9 @@
         </dependency>
 
         <dependency>
-            <groupId>ru.softlab.efr.services</groupId>
-            <artifactId>smedservice-insurance-service-model</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <groupId>ru.softlab.insurance.sms.services</groupId>
+            <artifactId>insurance-service-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

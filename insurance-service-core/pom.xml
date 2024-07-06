@@ -2,23 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>smedservice-insurance-service</artifactId>
-        <groupId>ru.softlab.efr.services</groupId>
-        <version>0.0.2-SNAPSHOT</version>
+        <groupId>ru.softlab.insurance.sms.services</groupId>
+        <artifactId>insurance-service</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>smedservice-insurance-service-core</artifactId>
+    <artifactId>insurance-service-core</artifactId>
 
     <dependencies>
         <!--SOFTLAB-->
         <dependency>
-            <groupId>ru.softlab.efr.services</groupId>
-            <artifactId>smedservice-insurance-service-model</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <groupId>ru.softlab.insurance.sms.services</groupId>
+            <artifactId>insurance-service-model</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>ru.softlab.efr.common</groupId>
-            <artifactId>smedservice-common-dict-client</artifactId>
+            <groupId>ru.softlab.insurance.sms.services</groupId>
+            <artifactId>common-dict-client</artifactId>
             <version>${efr.common.dict.version}</version>
         </dependency>
         <dependency>
