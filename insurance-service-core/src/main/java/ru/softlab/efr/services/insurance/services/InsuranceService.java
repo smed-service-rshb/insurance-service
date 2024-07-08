@@ -58,6 +58,7 @@ public class InsuranceService {
     private CurrencyRateClient currencyRateClient;
     private ContractNumberSequenceApi contractNumberSequenceService;
     private CrmExportStatusService crmExportStatusService;
+    private EmailService emailService;
 
     @Autowired
     public InsuranceService(InsuranceRepository insuranceRepository,
@@ -66,7 +67,8 @@ public class InsuranceService {
                             NotifyService notifyService,
                             AttachmentService attachmentService,
                             StatusService statusService, CurrencyRateClient currencyRateClient,
-                            CrmExportStatusService crmExportStatusService) {
+                            CrmExportStatusService crmExportStatusService,
+                            EmailService emailService) {
         this.insuranceRepository = insuranceRepository;
         this.contractNumberSequenceService = contractNumberSequenceService;
         this.statusHistoryService = statusHistoryService;
@@ -75,6 +77,7 @@ public class InsuranceService {
         this.statusService = statusService;
         this.currencyRateClient = currencyRateClient;
         this.crmExportStatusService = crmExportStatusService;
+        this.emailService = emailService;
     }
 
     /**
@@ -571,6 +574,16 @@ public class InsuranceService {
                 crmExportStatusService.exportInsuranceByChangeStatus(insurance);
             }
         }
+
+        if (InsuranceStatusCode.PAYED == newStatus) {
+            try {
+                emailService.sendInsuranceTemplates(insurance);
+            } catch (Exception e) {
+                LOGGER.error(String.format("Ошибка при отправке документов на почту клиенту по договору %s", insurance.getContractNumber()));
+            }
+        }
+
+
         //Сохраняем изменения в истории статусов
         statusHistoryService.save(insurance, newStatus, employeeId, employeeName, subdivisionId, subdivisionName, description);
 

@@ -7,6 +7,7 @@ public class PersonalEmailedDto {
     private String name;
     private String surName;
     private String thirdName;
+    private String fullName;
     private LocalDate birthDate;
 
     public String getName() {
@@ -32,5 +33,13 @@ public class PersonalEmailedDto {
     }
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }

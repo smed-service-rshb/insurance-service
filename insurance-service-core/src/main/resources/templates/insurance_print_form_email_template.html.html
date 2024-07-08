@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>"Обращение из Личного кабинета"</title>
+</head>
+<body>
+<div>
+    <p th:text="${personal.fullName} + ', благодарим Вас за то, что выбираете СоюзМедсервис.'"/>
+    <p th:text="'Во вложении Вы найдете оформленный и подписанный комплект документов к договору №' + ${insurance.number} + ' по программе «' + ${insurance.programName} + '».'"/>
+</div>
+</body>
+</html>
